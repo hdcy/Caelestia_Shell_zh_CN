@@ -7,7 +7,7 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   python install_zh_CN.py . ./test_output              # 指定源+输出 (Windows 测试)
 """
 
-import json, os, sys, shutil, re
+import argparse, json, os, sys, shutil, re
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_FILE = os.path.join(SCRIPT_DIR, "zh_CN.json")
@@ -51,12 +51,24 @@ def parse_comment_paths(comment):
 
 
 def main():
-    print("=== Caelestia Shell 汉化脚本 ===")
-    print()
+    parser = argparse.ArgumentParser(
+        description="Caelestia Shell 简体中文汉化脚本"
+    )
+    parser.add_argument("source", nargs="?", help="源目录路径（默认自动检测）")
+    parser.add_argument("target", nargs="?", default=LINUX_TARGET, help="输出目录（默认 ~/.config/quickshell/caelestia）")
+    parser.add_argument("--dry-run", action="store_true", help="预览模式：只报告将要修改的内容，不实际写入文件")
+    parser.add_argument("--force", action="store_true", help="非交互模式：跳过所有确认提示，直接删除并重新复制")
+    args = parser.parse_args()
 
-    # 解析参数
-    source_arg = sys.argv[1] if len(sys.argv) > 1 else None
-    target_dir = sys.argv[2] if len(sys.argv) > 2 else LINUX_TARGET
+    source_arg = args.source
+    target_dir = args.target
+    is_dry_run = args.dry_run
+    is_force = args.force
+
+    print("=== Caelestia Shell 汉化脚本 ===")
+    if is_dry_run:
+        print("  [预览模式 — 不会修改任何文件]")
+    print()
 
     print(f"脚本位置:     {SCRIPT_DIR}")
     print(f"翻译字典:     {JSON_FILE}")
@@ -119,18 +131,36 @@ def main():
     if os.path.isdir(target_dir):
         print(f"    已存在: {target_dir}")
         print("    从源目录重新复制 (已汉化的目录无法再次匹配英文原文)")
-        print("      y) 确认重新复制 (⚠ 会删除目标目录下所有文件, 包括用户自定义配置)")
-        print("      n) 跳过, 在现有目录上汉化")
-        choice = input("    选项 [y/n] (默认 y): ").strip().lower()
-        if choice != "n":
+
+        if is_dry_run:
+            print("    [预览] 将删除目标目录并从源目录重新复制")
+        elif is_force:
             shutil.rmtree(target_dir)
             _do_copy()
-            print("    已重新复制。")
+            print("    已重新复制（--force 模式）。")
         else:
-            print("    保留现有目录。")
+            print("      y) 重新复制 (⚠ 会删除目标目录下所有用户自定义文件)")
+            print("      n) 保留现有目录 (⚠ 新文件不会同步、已汉化文本无法重新匹配)")
+            choice = input("    选项 [y/n] (默认 n): ").strip().lower()
+
+            if choice == 'y':
+                confirm = input("    ⚠ 确认删除整个目录？此操作不可逆 [y/N]: ").strip().lower()
+                if confirm == 'y':
+                    shutil.rmtree(target_dir)
+                    _do_copy()
+                    print("    已重新复制。")
+                else:
+                    print("    已取消删除，将在现有目录上汉化。")
+                    print("    注意：不会从源目录同步新文件，已汉化文本可能无法重新匹配。")
+            else:
+                print("    保留现有目录。")
+                print("    注意：不会从源目录同步新文件，已汉化文本可能无法重新匹配。")
     else:
-        _do_copy()
-        print("    已从源目录复制。")
+        if is_dry_run:
+            print(f"    [预览] 将从 {source_conf} 复制到 {target_dir}")
+        else:
+            _do_copy()
+            print("    已从源目录复制。")
 
     if not os.path.isfile(os.path.join(target_dir, "shell.qml")):
         print(f"    错误: {target_dir}/shell.qml 不存在")
@@ -176,10 +206,15 @@ def main():
                 all_entries.add((ctx, src))
 
     entry_count = len(all_entries)
-    target_count = len(path_map) + len(fname_map)
-    print(f"    已加载 {target_count} 个目标文件, {entry_count} 条词条")
+    path_count = len(path_map)
+    fname_count = len(fname_map)
+    print(f"    已加载 {path_count + fname_count} 个目标文件 ({path_count} 精确路径 + {fname_count} 文件名兜底), {entry_count} 条词条")
     print(f"    扫描: {target_dir}")
-    print()
+    if is_dry_run:
+        print()
+        print("    --- 预览：以下是将要修改的文件 ---")
+    else:
+        print()
 
     total_files = 0
     total_subs = 0
@@ -194,8 +229,11 @@ def main():
             rel = os.path.relpath(filepath, target_dir).replace("\\", "/")
 
             entries_for_file = path_map.get(rel, [])
+            matched_by_fallback = False
             if not entries_for_file:
                 entries_for_file = fname_map.get(fname, [])
+                if entries_for_file:
+                    matched_by_fallback = True
             if not entries_for_file:
                 continue
 
@@ -297,9 +335,12 @@ def main():
                     matched_entries.add(entry_key)
 
             if content != original:
-                with open(filepath, "w", encoding="utf-8", newline="\n") as f:
-                    f.write(content)
-                print(f"    [+] {rel} ({file_subs} 处)")
+                if is_dry_run:
+                    print(f"    [预览] {rel} ({file_subs} 处)" + (" ⚠ 文件名兜底" if matched_by_fallback else ""))
+                else:
+                    with open(filepath, "w", encoding="utf-8", newline="\n") as f:
+                        f.write(content)
+                    print(f"    [+] {rel} ({file_subs} 处)" + (" ⚠ 文件名兜底" if matched_by_fallback else ""))
                 total_files += 1
                 total_subs += file_subs
 
@@ -314,11 +355,19 @@ def main():
 
     print()
     print("=== 结果 ===")
-    print(f"  修改: {total_files} 个文件")
-    print(f"  替换: {total_subs} 处")
-    print(f"  词条: {entry_count} 条中 {len(matched_entries)} 条命中")
+    if is_dry_run:
+        print(f"  预览修改: {total_files} 个文件")
+        print(f"  预览替换: {total_subs} 处")
+        print(f"  词条: {entry_count} 条中 {len(matched_entries)} 条可命中")
+        if total_files == 0:
+            print()
+            print("  [!] 没有可修改的文件 — 可能已经汉化过，或翻译字典需要更新")
+    else:
+        print(f"  修改: {total_files} 个文件")
+        print(f"  替换: {total_subs} 处")
+        print(f"  词条: {entry_count} 条中 {len(matched_entries)} 条命中")
 
-    if total_files == 0:
+    if total_files == 0 and not is_dry_run:
         print()
         print("  [!] 没有文件被修改, 可能原因:")
         print("    - 输出目录中没有匹配的 QML 文件")
@@ -336,14 +385,31 @@ def main():
         if len(truly_missed) > 30:
             print(f"      ... 还有 {len(truly_missed) - 30} 条")
 
-    # 保存翻译字典到输出目录
-    trans_dir = os.path.join(target_dir, "assets", "translations")
-    os.makedirs(trans_dir, exist_ok=True)
-    shutil.copy2(JSON_FILE, trans_dir)
+    # 保存翻译字典到输出目录（仅作快照归档，Quickshell 不会读取此文件；方便排查当前使用的是哪个版本的字典）
+    if not is_dry_run:
+        trans_dir = os.path.join(target_dir, "assets", "translations")
+        os.makedirs(trans_dir, exist_ok=True)
+        shutil.copy2(JSON_FILE, trans_dir)
 
-    print()
-    print("=== 完成！重启 Caelestia Shell 即可生效 ===")
-    print("提示: 修改 zh_CN.json 后重新运行此脚本 (建议选选项1)")
+    if is_dry_run:
+        print()
+        print("=== 预览完成 === 使用 python install_zh_CN.py 正式运行汉化。")
+    else:
+        print()
+        print("=== 完成！重启 Caelestia Shell 即可生效 ===")
+        print("提示: 修改 zh_CN.json 后重新运行此脚本")
+
+    # 兜底路径报告
+    if fname_map:
+        fallback_files = {fname for fname in fname_map}
+        print()
+        print(f"  💡 提示: {len(fname_map)} 个上下文使用了文件名兜底匹配（无 _comment 路径），")
+        print(f"     若发现翻译错误，建议为以下文件补充 _comment 字段：")
+        for f in sorted(fallback_files)[:10]:
+            print(f"       - {f}")
+        if len(fallback_files) > 10:
+            print(f"       ... 还有 {len(fallback_files) - 10} 个")
+
     return 0
 
 

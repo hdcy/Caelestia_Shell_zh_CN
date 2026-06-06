@@ -19,11 +19,28 @@
 ### Linux 部署
 
 ```bash
-cd /path/to/Caelestia/assets/translations
+cd Caelestia_zh_CN
 python3 install_zh_CN.py
 ```
-#### 运行脚本时请确保JSON文件和脚本在同一目录下
-如果不存在用户配置`~/.config/quickshell/caelestia`，脚本会自动从 `/etc/xdg/quickshell/Caelestia` 复制到 `~/.config/quickshell/caelestia` 并汉化。完成后重启 Caelestia Shell 即可生效。
+
+脚本会自动检测系统目录并汉化。完成后重启 Caelestia Shell 即可生效。
+
+### 命令行参数
+
+| 参数 | 说明 |
+|------|------|
+| `source` (可选) | 源目录路径，默认自动检测 `/etc/xdg/quickshell/caelestia` |
+| `target` (可选) | 输出目录，默认 `~/.config/quickshell/caelestia` |
+| `--dry-run` | 预览模式：只报告将要修改的内容，不实际写入 |
+| `--force` | 非交互模式：跳过确认提示，直接删除并重新复制 |
+
+### 预览模式
+
+caelestia-shell 更新后，可以先预览哪些文件需要重新汉化：
+
+```bash
+python3 install_zh_CN.py --dry-run
+```
 
 ### 指定源目录
 
@@ -37,6 +54,12 @@ python3 install_zh_CN.py /custom/path/to/caelestia
 python3 install_zh_CN.py /path/to/source /path/to/output
 ```
 
+### 非交互模式（自动化）
+
+```bash
+python3 install_zh_CN.py --force
+```
+
 ### Windows 测试
 
 ```powershell
@@ -48,15 +71,15 @@ python install_zh_CN.py ..\.. .\test_output
 
 ### 在原有目录配置进行汉化
 
-选择此选项时，请确保用户配置的目录结构和官方相同。
+选择保留现有目录（`n`）时，请确保用户配置的目录结构和官方相同。注意：不会从源目录同步新增的 QML 文件，且已汉化的文本因英文原文已不存在，无法重新匹配。
 
 ### 重新复制会清空用户配置
 
-选择重新复制时，脚本会**删除整个目标目录后重新复制**。如果你在 `~/.config/quickshell/caelestia` 下有自定义配置（壁纸路径、主题设置等），请提前备份。
+选择重新复制（`y`，需二次确认）时，脚本会**删除整个目标目录后重新复制**。如果你在 `~/.config/quickshell/caelestia` 下有自定义配置，请提前备份。
 
 ### 不可重复执行
 
-脚本是直接替换英文为中文。已汉化的目录中英文原文已不存在，再次运行会匹配不到任何内容。如需重新汉化（如更新翻译后），请选择重新复制。
+脚本是直接替换英文为中文。已汉化的目录中英文原文已不存在，再次运行会匹配不到任何内容。如需重新汉化（如更新翻译后），请选择重新复制（`y`），或使用 `--force` 跳过交互。
 
 ### 源文件不会被修改
 
