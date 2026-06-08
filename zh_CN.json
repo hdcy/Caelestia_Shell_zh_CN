@@ -297,7 +297,12 @@
   "WeatherTab": {
     "Loading...": "加载中...",
     "7-Day Forecast": "7 日预报",
-    "Today": "今天"
+    "Today": "今天",
+    "Sunrise": "日出",
+    "Sunset": "日落",
+    "Humidity": "湿度",
+    "Feels Like": "体感温度",
+    "Wind": "风速"
   },
   "_comment_Wrapper": "自动生成 → modules/dashboard/Wrapper.qml",
   "Wrapper": {
