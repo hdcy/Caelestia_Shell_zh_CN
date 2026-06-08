@@ -275,7 +275,7 @@
     "Hourly forecast": "逐时预报",
     "Now": "现在"
   },
-  "_comment_Content": "自动生成 → modules/launcher/Content.qml",
+  "_comment_Content": "⚠ 合并: modules/launcher/Content.qml + modules/dashboard/Content.qml",
   "Content": {
     "Dashboard": "仪表盘",
     "Media": "媒体",
