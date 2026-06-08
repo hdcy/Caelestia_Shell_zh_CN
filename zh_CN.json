@@ -1,253 +1,49 @@
 {
-  "_comment": "Caelestia Shell 简体中文翻译字典 | key 必须与 QML 文件名(去掉.qml)完全一致 | 同名文件共享 context 需合并",
-  "_comment_AudioPane": "音频设置面板 → modules/controlcenter/audio/AudioPane.qml",
-  "AudioPane": {
-    "Audio": "音频",
-    "Volume": "音量",
-    "Unknown": "未知"
-  },
-  "_comment_BackgroundSection": "外观-背景/壁纸/可视化 → modules/controlcenter/appearance/sections/BackgroundSection.qml",
-  "BackgroundSection": {
-    "Background": "背景",
-    "Enabled": "已启用"
-  },
-  "_comment_TransparencySection": "外观-透明度 → modules/controlcenter/appearance/sections/TransparencySection.qml",
-  "TransparencySection": {
-    "Transparency": "透明度"
-  },
-  "_comment_TaskbarPane": "任务栏设置 → modules/controlcenter/taskbar/TaskbarPane.qml",
-  "TaskbarPane": {
-    "Taskbar": "任务栏",
-    "Speakers": "扬声器",
-    "Microphone": "麦克风",
-    "Network": "网络",
-    "Bluetooth": "蓝牙",
-    "Battery": "电池",
-    "Workspaces": "工作区",
-    "Shown": "显示",
-    "Active indicator": "活动指示器",
-    "Occupied background": "有应用时背景",
-    "Show windows": "显示窗口",
-    "Max window icons": "最大窗口图标数",
-    "Volume": "音量",
-    "Brightness": "亮度",
-    "Clock": "时钟",
-    "Background": "背景",
-    "Show date": "显示日期",
-    "Persistent": "常驻显示",
-    "Show on hover": "悬停显示",
-    "Drag threshold": "拖动阈值",
-    "Active window": "活动窗口",
-    "Compact": "紧凑模式",
-    "Inverted": "反转",
-    "Tray": "托盘",
-    "Status icons": "状态图标"
-  },
-  "_comment_Settings": "⚠ 合并: modules/controlcenter/launcher/Settings.qml + modules/controlcenter/bluetooth/Settings.qml",
-  "Settings": {
-    "General": "常规",
-    "Enabled": "已启用",
-    "Show on hover": "悬停显示",
-    "Vim keybinds": "Vim 快捷键",
-    "Enable dangerous actions": "启用危险操作",
-    "Display": "显示",
-    "%1": "%1",
-    "Max wallpapers": "最大壁纸数",
-    "Drag threshold": "拖动阈值",
-    "None": "无",
-    "Fuzzy search": "模糊搜索",
-    "Apps": "应用",
-    "Actions": "操作",
-    "Schemes": "配色",
-    "Variants": "变体",
-    "Wallpapers": "壁纸",
-    "Discoverable": "可被发现",
-    "Pairable": "可配对",
-    "Unknown": "未知"
-  },
-  "_comment_LauncherPane": "启动器面板 → modules/controlcenter/launcher/LauncherPane.qml",
-  "LauncherPane": {
-    "Launcher": "启动器",
-    "Unknown": "未知"
-  },
-  "_comment_NetworkSettings": "网络设置 → modules/controlcenter/network/NetworkSettings.qml",
-  "NetworkSettings": {
-    "Ethernet": "有线网络",
-    "%1": "%1",
-    "Connected devices": "已连接设备",
-    "Wireless": "无线网络",
-    "VPN": "VPN",
-    "Network": "网络",
-    "%1%": "%1%",
-    "%1 MHz": "%1 MHz"
-  },
-  "_comment_NetworkingPane": "网络面板总览 → modules/controlcenter/network/NetworkingPane.qml",
-  "NetworkingPane": {
-    "Network": "网络",
-    "VPN": "VPN",
-    "Ethernet": "有线网络",
-    "Wireless": "无线网络"
-  },
-  "_comment_WirelessList": "WiFi 列表 → modules/controlcenter/network/WirelessList.qml",
-  "WirelessList": {
+  "_comment_Audio": "自动生成 → services/Audio.qml",
+  "Audio": {
     "Unknown": "未知",
-    "Connected": "已连接"
+    "Unknown Application": "未知应用程序",
+    "Unknown Device": "未知设备",
+    "Audio output changed": "音频输出已更改",
+    "Now using: %1": "正在使用：%1",
+    "Audio input changed": "音频输入已更改"
   },
-  "_comment_WirelessDetails": "WiFi 详情 → modules/controlcenter/network/WirelessDetails.qml",
-  "WirelessDetails": {
-    "Unknown": "未知",
-    "Connected": "已连接",
-    "SSID": "SSID",
-    "BSSID": "BSSID",
-    "%1%": "%1%",
-    "%1 MHz": "%1 MHz"
-  },
-  "_comment_WirelessSettings": "WiFi 设置 → modules/controlcenter/network/WirelessSettings.qml",
-  "WirelessSettings": {
-    "%1%": "%1%",
-    "%1 MHz": "%1 MHz"
-  },
-  "_comment_WirelessPasswordDialog": "WiFi 密码对话框 → modules/controlcenter/network/WirelessPasswordDialog.qml",
-  "WirelessPasswordDialog": {
-    "Connect": "连接",
-    "Enter password": "输入密码",
-    "Network: %1": "网络: %1",
-    "Connection failed. Please check your password and try again.": "连接失败。请检查密码并重试。",
-    "Connecting...": "正在连接...",
-    "Password": "密码",
-    "Cancel": "取消"
-  },
-  "_comment_EthernetList": "有线设备列表 → modules/controlcenter/network/EthernetList.qml",
-  "EthernetList": {
-    "Unknown": "未知",
-    "Connected": "已连接"
-  },
-  "_comment_EthernetDetails": "有线设备详情 → modules/controlcenter/network/EthernetDetails.qml",
-  "EthernetDetails": {
-    "Unknown": "未知",
-    "Connected": "已连接"
-  },
-  "_comment_EthernetSettings": "有线网络设置 → modules/controlcenter/network/EthernetSettings.qml",
-  "EthernetSettings": {
-    "%1": "%1",
-    "Connected devices": "已连接设备"
-  },
-  "_comment_VpnSettings": "VPN 设置 → modules/controlcenter/network/VpnSettings.qml",
-  "VpnSettings": {
-    "General": "常规",
-    "%1 • %2": "%1 • %2"
-  },
-  "_comment_VpnList": "VPN 列表 → modules/controlcenter/network/VpnList.qml",
-  "VpnList": {
-    "Unknown": "未知",
-    "Disabled": "已禁用",
-    "Connecting...": "正在连接...",
-    "Connected": "已连接",
-    "Enabled": "已启用",
-    "NetBird": "NetBird",
-    "Tailscale": "Tailscale",
-    "Cloudflare WARP": "Cloudflare WARP",
-    "WireGuard": "WireGuard",
-    "Cancel": "取消"
-  },
-  "_comment_VpnDetails": "VPN 详情 → modules/controlcenter/network/VpnDetails.qml",
-  "VpnDetails": {
-    "Unknown": "未知",
-    "Disconnect": "断开",
-    "Connect": "连接",
-    "Disabled": "已禁用",
-    "Connecting...": "正在连接...",
-    "Connected": "已连接",
-    "Enabled": "已启用",
-    "Cancel": "取消"
-  },
-  "_comment_Details": "⚠ 合并: modules/controlcenter/bluetooth/Details.qml + modules/windowinfo/Details.qml",
-  "Details": {
-    "Connected": "已连接",
-    "Paired": "已配对",
-    "Blocked": "已屏蔽",
-    "Trusted": "已信任",
-    "Wake allowed": "允许唤醒",
-    "Address: %1": "地址：%1",
-    "Position: %1, %2": "位置：%1，%2",
-    "Size: %1 x %2": "大小：%1 x %2",
-    "Workspace: %1 (%2)": "工作区：%1（%2）",
-    "Monitor: %1 (%2) at %3, %4": "显示器：%1（%2）位于 %3，%4",
-    "Monitor: unknown": "显示器：未知",
-    "Initial title: %1": "初始标题：%1",
-    "Initial class: %1": "初始类名：%1",
-    "Process id: %1": "进程 ID：%1",
-    "Floating: %1": "浮动：%1",
-    "Xwayland: %1": "Xwayland：%1",
-    "Pinned: %1": "固定：%1",
-    "Fullscreen state: %1": "全屏状态：%1",
-    "Fullscreen state: unknown": "全屏状态：未知"
-  },
-  "_comment_DeviceList": "蓝牙设备列表 → modules/controlcenter/bluetooth/DeviceList.qml",
-  "DeviceList": {
-    "Bluetooth": "蓝牙",
-    "Discoverable": "可被发现",
-    "Pairable": "可配对",
-    "Unknown": "未知"
-  },
-  "_comment_DashboardPane": "仪表盘设置面板 → modules/controlcenter/dashboard/DashboardPane.qml",
-  "DashboardPane": {
-    "Dashboard": "仪表盘"
-  },
-  "_comment_GeneralSection": "仪表盘常规设置 → modules/controlcenter/dashboard/GeneralSection.qml",
-  "GeneralSection": {
-    "Enabled": "已启用",
-    "Show on hover": "悬停显示",
-    "Drag threshold": "拖动阈值"
-  },
-  "_comment_PerformanceSection": "仪表盘性能资源设置 → modules/controlcenter/dashboard/PerformanceSection.qml",
-  "PerformanceSection": {
-    "Battery": "电池",
-    "GPU": "GPU",
-    "CPU": "CPU",
-    "Memory": "内存",
-    "Storage": "存储",
-    "Network": "网络"
-  },
-  "_comment_NotificationsPane": "通知设置 → modules/controlcenter/notifications/NotificationsPane.qml",
-  "NotificationsPane": {
-    "Notifications": "通知"
-  },
-  "_comment_WindowFactory": "设置窗口工厂 → modules/controlcenter/WindowFactory.qml",
-  "WindowFactory": {
-    "Nexus — %1": "Nexus — %1"
-  },
-  "_comment_ConfigToasts": "配置加载/保存提示 → modules/ConfigToasts.qml",
-  "ConfigToasts": {
-    "Config loaded": "配置已加载",
-    "Config loaded successfully!": "配置加载成功！",
-    "Failed to parse config%1": "解析配置失败%1",
-    "Failed to save config%1": "保存配置失败%1",
-    "Unknown option in%1 config": "%1 配置中有未知选项",
-    "Failed to parse token config%1": "解析令牌配置失败%1",
-    "Unknown option in%1 token config": "%1 令牌配置中有未知选项"
-  },
-  "_comment_Hypr": "键盘锁定/布局提示 → services/Hypr.qml",
-  "Hypr": {
-    "Caps lock enabled": "大写锁定已开启",
-    "Caps lock is currently enabled": "大写锁定当前为开启状态",
-    "Caps lock disabled": "大写锁定已关闭",
-    "Caps lock is currently disabled": "大写锁定当前为关闭状态",
-    "Num lock enabled": "数字锁定已开启",
-    "Num lock is currently enabled": "数字锁定当前为开启状态",
-    "Num lock disabled": "数字锁定已关闭",
-    "Num lock is currently disabled": "数字锁定当前为关闭状态",
-    "Keyboard layout changed": "键盘布局已更改",
-    "Layout changed to: %1": "布局已更改为：%1"
-  },
-  "_comment_GameMode": "游戏模式 → services/GameMode.qml",
+  "_comment_GameMode": "自动生成 → services/GameMode.qml",
   "GameMode": {
     "Game mode enabled": "游戏模式已启用",
     "Disabled Hyprland animations, blur, gaps and shadows": "已关闭 Hyprland 动画、模糊、间隙与阴影",
     "Game mode disabled": "游戏模式已关闭",
     "Hyprland settings restored": "已恢复 Hyprland 设置"
   },
-  "_comment_VPN": "VPN 连接状态提示 → services/VPN.qml",
+  "_comment_Hypr": "自动生成 → services/Hypr.qml",
+  "Hypr": {
+    "Caps lock enabled": "大写锁定已启用",
+    "Caps lock is currently enabled": "大写锁定当前已启用",
+    "Caps lock disabled": "大写锁定已禁用",
+    "Caps lock is currently disabled": "大写锁定当前已禁用",
+    "Num lock enabled": "数字锁定已启用",
+    "Num lock is currently enabled": "数字锁定当前已启用",
+    "Num lock disabled": "数字锁定已禁用",
+    "Num lock is currently disabled": "数字锁定当前已禁用",
+    "Keyboard layout changed": "键盘布局已更改",
+    "Layout changed to: %1": "布局已切换为：%1"
+  },
+  "_comment_NotifData": "自动生成 → services/NotifData.qml",
+  "NotifData": {
+    "now": "刚刚"
+  },
+  "_comment_Notifs": "自动生成 → services/Notifs.qml",
+  "Notifs": {
+    "Do not disturb enabled": "免打扰已启用",
+    "Popup notifications are now disabled": "弹窗通知现已禁用",
+    "Do not disturb disabled": "免打扰已禁用",
+    "Popup notifications are now enabled": "弹窗通知现已启用"
+  },
+  "_comment_Players": "自动生成 → services/Players.qml",
+  "Players": {
+    "Now Playing": "正在播放"
+  },
+  "_comment_VPN": "自动生成 → services/VPN.qml",
   "VPN": {
     "VPN connected": "VPN 已连接",
     "Connected to %1": "已连接到 %1",
@@ -257,41 +53,11 @@
     "%1: %2": "%1：%2",
     "VPN error": "VPN 错误"
   },
-  "_comment_Players": "媒体播放器通知 → services/Players.qml",
-  "Players": {
-    "Now Playing": "正在播放",
-    "%1 - %2": "%1 - %2"
-  },
-  "_comment_Notifs": "勿扰模式提示 → services/Notifs.qml",
-  "Notifs": {
-    "Do not disturb enabled": "勿扰模式已开启",
-    "Popup notifications are now disabled": "弹窗通知已关闭",
-    "Do not disturb disabled": "勿扰模式已关闭",
-    "Popup notifications are now enabled": "弹窗通知已开启"
-  },
-  "_comment_Audio": "⚠ 合并: services/Audio.qml + modules/bar/popouts/Audio.qml",
-  "Audio": {
-    "Unknown": "未知",
-    "Unknown Application": "未知应用程序",
-    "Unknown Device": "未知设备",
-    "Audio output changed": "音频输出已更改",
-    "Now using: %1": "正在使用：%1",
-    "Audio input changed": "音频输入已更改",
-    "Output device": "输出设备",
-    "Input device": "输入设备",
-    "Volume (%1)": "音量（%1）",
-    "Muted": "已静音",
-    "Open settings": "打开设置"
-  },
-  "_comment_NotifData": "通知时间标签 → services/NotifData.qml",
-  "NotifData": {
-    "now": "刚刚"
-  },
-  "_comment_Weather": "天气服务 → services/Weather.qml",
+  "_comment_Weather": "自动生成 → services/Weather.qml",
   "Weather": {
     "No weather": "无天气信息"
   },
-  "_comment_BatteryMonitor": "电池充放电/休眠 → modules/BatteryMonitor.qml",
+  "_comment_BatteryMonitor": "自动生成 → modules/BatteryMonitor.qml",
   "BatteryMonitor": {
     "Charger unplugged": "充电器已拔出",
     "Battery is discharging": "电池正在放电",
@@ -302,193 +68,29 @@
     "Hibernating in 5 seconds": "5 秒后将休眠",
     "Hibernating to prevent data loss": "即将休眠以防止数据丢失"
   },
-  "_comment_Preview": "窗口信息预览 → modules/windowinfo/Preview.qml",
-  "Preview": {
-    "No active client": "无活动窗口",
-    "Try switching to a window": "请尝试切换到某个窗口",
-    "%1 on monitor %2 at %3, %4": "%1 在显示器 %2 上，位置 %3，%4"
+  "_comment_ConfigToasts": "自动生成 → modules/ConfigToasts.qml",
+  "ConfigToasts": {
+    "Config loaded": "配置已加载",
+    "Config loaded successfully!": "配置加载成功！",
+    "Failed to parse config%1": "解析配置失败%1",
+    "Failed to save config%1": "保存配置失败%1",
+    "Unknown option in%1 config": "%1 配置中有未知选项",
+    "Failed to parse token config%1": "解析令牌配置失败%1",
+    "Unknown option in%1 token config": "%1 令牌配置中有未知选项"
   },
-  "_comment_Buttons": "窗口信息操作按钮 → modules/windowinfo/Buttons.qml",
-  "Buttons": {
-    "Move to workspace": "移动到工作区",
-    "Tile": "平铺",
-    "Float": "浮动",
-    "Unpin": "取消固定",
-    "Pin": "固定",
-    "Kill": "强制结束"
+  "_comment_ActiveWindow": "自动生成 → modules/bar/components/ActiveWindow.qml",
+  "ActiveWindow": {
+    "Desktop": "桌面"
   },
-  "_comment_Wallpaper": "桌面壁纸缺失提示 → modules/background/Wallpaper.qml",
-  "Wallpaper": {
-    "Wallpaper missing?": "缺少壁纸？",
-    "Select a wallpaper": "选择壁纸",
-    "Image files": "图像文件",
-    "Set it now!": "立即设置！"
+  "_comment_modules_bar_popouts_Audio": "自动生成 → modules/bar/popouts/Audio.qml",
+  "modules_bar_popouts_Audio": {
+    "Output device": "输出设备",
+    "Input device": "输入设备",
+    "Volume (%1)": "音量（%1）",
+    "Muted": "已静音",
+    "Open settings": "打开设置"
   },
-  "_comment_NotifDock": "⚠ 合并: modules/sidebar/NotifDock.qml + modules/lock/NotifDock.qml",
-  "NotifDock": {
-    "notification%1": "%1条通知",
-    "Notifications": "通知",
-    "No Notifications": "暂无通知",
-    "%1 notification%2": "%1 条通知%2",
-    "Unlock for Notifications": "解锁以查看通知"
-  },
-  "_comment_Notif": "通知正文 → modules/sidebar/Notif.qml",
-  "Notif": {
-    "No body here! :/": "暂无正文内容 :/"
-  },
-  "_comment_Record": "屏幕录制 → modules/utilities/cards/Record.qml",
-  "Record": {
-    "Screen Recorder": "屏幕录制",
-    "Record fullscreen": "录制全屏",
-    "Fullscreen": "全屏",
-    "Record region": "录制区域",
-    "Region": "区域",
-    "Record fullscreen with sound": "录制全屏（含声音）",
-    "Record region with sound": "录制区域（含声音）",
-    "Recording for %1": "已录制 %1",
-    "Paused": "已暂停",
-    "Running...": "录制中...",
-    "Ready": "就绪"
-  },
-  "_comment_IdleInhibit": "保持唤醒 → modules/utilities/cards/IdleInhibit.qml",
-  "IdleInhibit": {
-    "Keep Awake": "保持唤醒",
-    "Preventing sleep mode": "正在阻止睡眠",
-    "Normal power management": "正常电源管理",
-    "Active since %1": "自 %1 起生效"
-  },
-  "_comment_RecordingList": "录制列表 → modules/utilities/cards/RecordingList.qml",
-  "RecordingList": {
-    "Recordings": "录制",
-    "Recording at %1": "录制于 %1",
-    "No recordings found": "未找到录制"
-  },
-  "_comment_Toggles": "快捷开关 → modules/utilities/cards/Toggles.qml",
-  "Toggles": {
-    "Quick Toggles": "快捷开关"
-  },
-  "_comment_RecordingDeleteModal": "删除录制确认 → modules/utilities/RecordingDeleteModal.qml",
-  "RecordingDeleteModal": {
-    "Delete recording?": "删除录制？",
-    "Recording '%1' will be permanently deleted.": "录制'%1'将被永久删除。",
-    "Cancel": "取消",
-    "Delete": "删除"
-  },
-  "_comment_Content": "⚠ 合并: modules/launcher/Content.qml + modules/dashboard/Content.qml",
-  "Content": {
-    "Dashboard": "仪表盘",
-    "Media": "媒体",
-    "Performance": "性能",
-    "Weather": "天气"
-  },
-  "_comment_ContentList": "启动器搜索结果 → modules/launcher/ContentList.qml",
-  "ContentList": {
-    "No wallpapers found": "未找到壁纸",
-    "No results": "无结果",
-    "Try putting some wallpapers in %1": "请尝试将壁纸放入 %1",
-    "Try searching for something else": "请尝试搜索其他内容"
-  },
-  "_comment_Actions": "启动器操作列表 → modules/launcher/services/Actions.qml",
-  "Actions": {
-    "Unnamed": "未命名",
-    "No description": "无描述"
-  },
-  "_comment_CalcItem": "启动器计算器 → modules/launcher/items/CalcItem.qml",
-  "CalcItem": {
-    "Calculating...": "计算中...",
-    "Type an expression to calculate": "输入表达式以计算",
-    "Open in calculator": "在计算器中打开"
-  },
-  "_comment_M3Variants": "Material 3 配色变体 → modules/launcher/services/M3Variants.qml",
-  "M3Variants": {
-    "Vibrant": "鲜艳",
-    "A high chroma palette. The primary palette's chroma is at maximum.": "高色度配色。主调色板色度达到最大。",
-    "Tonal Spot": "色调点缀",
-    "Default for Material theme colours. A pastel palette with a low chroma.": "Material 主题颜色的默认方案。低色度的粉彩配色。",
-    "Expressive": "表现力强",
-    "A medium chroma palette. The primary palette's hue is different from the seed colour, for variety.": "中等色度配色。主调色相与种子色不同，以增加变化。",
-    "Fidelity": "忠实",
-    "Matches the seed colour, even if the seed colour is very bright (high chroma).": "贴近种子色，即使种子色非常明亮（高色度）。",
-    "Content": "内容",
-    "Almost identical to fidelity.": "与'忠实'几乎相同。",
-    "Fruit Salad": "水果沙拉",
-    "A playful theme - the seed colour's hue does not appear in the theme.": "活泼主题——主题中不会出现种子色的色相。",
-    "Rainbow": "彩虹",
-    "Neutral": "中性",
-    "Close to grayscale, a hint of chroma.": "接近灰度，略带色度。",
-    "Monochrome": "单色",
-    "All colours are grayscale, no chroma.": "所有颜色均为灰度，无色度。"
-  },
-  "_comment_Performance": "仪表盘性能监控 → modules/dashboard/Performance.qml",
-  "Performance": {
-    "No widgets enabled": "未启用任何小组件",
-    "CPU": "CPU",
-    "Usage": "使用率",
-    "GPU": "GPU",
-    "Memory": "内存",
-    "Battery": "电池",
-    "Full": "已满",
-    "Charging": "充电中",
-    "...": "...",
-    "Storage": "存储",
-    "Network": "网络",
-    "Collecting data...": "正在收集数据...",
-    "Download": "下载",
-    "Upload": "上传",
-    "Total": "总计",
-    "Enable widgets in the dashboard settings": "在仪表盘设置中启用组件"
-  },
-  "_comment_Media": "⚠ 合并: modules/dashboard/Media.qml + modules/dashboard/dash/Media.qml + modules/lock/Media.qml",
-  "Media": {
-    "No media": "无媒体",
-    "Unknown title": "未知标题",
-    "Unknown album": "未知专辑",
-    "Unknown artist": "未知艺术家",
-    "No players": "无播放器",
-    "Nothing playing": "无播放内容",
-    "Unknown track": "未知曲目",
-    "Try playing some music!": "播放点音乐吧！"
-  },
-  "_comment_Wrapper": "仪表盘头像选择 → modules/dashboard/Wrapper.qml",
-  "Wrapper": {
-    "Select a profile picture": "选择头像",
-    "Image files": "图像文件"
-  },
-  "_comment_WeatherTab": "仪表盘天气 → modules/dashboard/WeatherTab.qml",
-  "WeatherTab": {
-    "Loading...": "加载中...",
-    "7-Day Forecast": "7 日预报",
-    "Today": "今天"
-  },
-  "_comment_InputField": "锁屏密码输入 → modules/lock/InputField.qml",
-  "InputField": {
-    "Loading...": "加载中...",
-    "You have reached the maximum number of tries": "已达到最大尝试次数",
-    "Enter your password": "输入密码"
-  },
-  "_comment_Center": "锁屏认证状态 → modules/lock/Center.qml",
-  "Center": {
-    "Caps lock is ON. Kb layout: %1": "大写锁定已开启。键盘布局：%1",
-    "Num lock is ON. Kb layout: %1": "数字锁定已开启。键盘布局：%1",
-    "Keyboard layout: %1": "键盘布局：%1",
-    "Caps lock and Num lock are ON.": "大写锁定与数字锁定均已开启。",
-    "Caps lock is ON.": "大写锁定已开启。",
-    "Num lock is ON.": "数字锁定已开启。",
-    "FP ERROR: %1": "指纹错误：%1",
-    "PW ERROR: %1": "密码错误：%1",
-    "Maximum password and fingerprint attempts reached.": "已达到密码与指纹尝试次数上限。",
-    "Maximum password attempts reached. Please use fingerprint.": "已达到密码尝试次数上限。请使用指纹。",
-    "Maximum password attempts reached.": "已达到密码尝试次数上限。",
-    "Maximum fingerprint attempts reached. Please use password.": "已达到指纹尝试次数上限。请使用密码。",
-    "Incorrect password. Please try again or use fingerprint.": "密码不正确。请重试或使用指纹。",
-    "Incorrect password. Please try again.": "密码不正确。请重试。",
-    "Fingerprint not recognized (%1/%2). Please try again or use password.": "指纹未识别（%1/%2）。请重试或使用密码。"
-  },
-  "_comment_WeatherInfo": "锁屏天气 → modules/lock/WeatherInfo.qml",
-  "WeatherInfo": {
-    "Weather": "天气"
-  },
-  "_comment_Battery": "顶栏电池弹出 → modules/bar/popouts/Battery.qml",
+  "_comment_Battery": "自动生成 → modules/bar/popouts/Battery.qml",
   "Battery": {
     "Remaining: %1%": "剩余电量：%1%",
     "No battery detected": "未检测到电池",
@@ -497,16 +99,21 @@
     "Performance Degraded": "性能受限",
     "Reason: %1": "原因：%1"
   },
-  "_comment_LockStatus": "顶栏锁定状态弹出 → modules/bar/popouts/LockStatus.qml",
+  "_comment_Bluetooth": "自动生成 → modules/bar/popouts/Bluetooth.qml",
+  "Bluetooth": {
+    "Bluetooth": "蓝牙",
+    "Enabled": "已启用",
+    "Discovering": "正在搜索",
+    "%1 device%2 available": "%1 个可用设备%2",
+    " (%1 connected)": "（已连接 %1 台）",
+    "Open settings": "打开设置"
+  },
+  "_comment_LockStatus": "自动生成 → modules/bar/popouts/LockStatus.qml",
   "LockStatus": {
     "Capslock: %1": "大写锁定：%1",
     "Numlock: %1": "数字锁定：%1"
   },
-  "_comment_TrayMenu": "顶栏托盘菜单 → modules/bar/popouts/TrayMenu.qml",
-  "TrayMenu": {
-    "Back": "返回"
-  },
-  "_comment_Network": "顶栏网络弹出 → modules/bar/popouts/Network.qml",
+  "_comment_Network": "自动生成 → modules/bar/popouts/Network.qml",
   "Network": {
     "Wireless": "无线网络",
     "Enabled": "已启用",
@@ -516,16 +123,11 @@
     "%1 devices available": "%1 个可用设备",
     "Unknown": "未知"
   },
-  "_comment_Bluetooth": "顶栏蓝牙弹出 → modules/bar/popouts/Bluetooth.qml",
-  "Bluetooth": {
-    "Bluetooth": "蓝牙",
-    "Enabled": "已启用",
-    "Discovering": "正在搜索",
-    "%1 device%2 available": "%1 个可用设备%2",
-    " (%1 connected)": "（已连接 %1 台）",
-    "Open settings": "打开设置"
+  "_comment_TrayMenu": "自动生成 → modules/bar/popouts/TrayMenu.qml",
+  "TrayMenu": {
+    "Back": "返回"
   },
-  "_comment_WirelessPassword": "顶栏 WiFi 密码输入 → modules/bar/popouts/WirelessPassword.qml",
+  "_comment_WirelessPassword": "自动生成 → modules/bar/popouts/WirelessPassword.qml",
   "WirelessPassword": {
     "Connect": "连接",
     "Enter password": "输入密码",
@@ -536,52 +138,265 @@
     "Password": "密码",
     "Cancel": "取消"
   },
-  "_comment_ActiveWindow": "顶栏活动窗口 → modules/bar/components/ActiveWindow.qml",
-  "ActiveWindow": {
-    "Desktop": "桌面"
-  },
-  "_comment_KbLayout": "顶栏键盘布局 → modules/bar/popouts/kblayout/KbLayout.qml",
+  "_comment_KbLayout": "自动生成 → modules/bar/popouts/kblayout/KbLayout.qml",
   "KbLayout": {
     "Keyboard Layouts": "键盘布局"
   },
-  "_comment_KbLayoutModel": "键盘布局数量限制 → modules/bar/popouts/kblayout/KbLayoutModel.qml",
+  "_comment_KbLayoutModel": "自动生成 → modules/bar/popouts/kblayout/KbLayoutModel.qml",
   "KbLayoutModel": {
     "Keyboard layout limit": "键盘布局数量限制",
     "XKB supports only 4 layouts at a time": "XKB 同时最多支持 4 种布局"
   },
-  "_comment_ConnectionInfoSection": "网络连接信息组件 → components/ConnectionInfoSection.qml",
-  "ConnectionInfoSection": {
-    "IP Address": "IP 地址",
-    "Not available": "不可用",
-    "Subnet Mask": "子网掩码",
-    "Gateway": "网关",
-    "DNS Servers": "DNS 服务器"
+  "_comment_Wallpaper": "自动生成 → modules/background/Wallpaper.qml",
+  "Wallpaper": {
+    "Wallpaper missing?": "缺少壁纸？",
+    "Select a wallpaper": "选择壁纸",
+    "Image files": "图像文件",
+    "Set it now!": "立即设置！"
   },
-  "_comment_ExtraIndicator": "额外指示器 → components/widgets/ExtraIndicator.qml",
-  "ExtraIndicator": {
-    "+%1": "+%1"
+  "_comment_Buttons": "自动生成 → modules/windowinfo/Buttons.qml",
+  "Buttons": {
+    "Move to workspace": "移动到工作区",
+    "Tile": "平铺",
+    "Float": "浮动",
+    "Unpin": "取消固定",
+    "Pin": "固定",
+    "Kill": "强制结束"
   },
-  "_comment_DialogButtons": "文件对话框按钮 → components/filedialog/DialogButtons.qml",
-  "DialogButtons": {
-    "Filter:": "筛选：",
-    "Select": "选择",
-    "Cancel": "取消"
+  "_comment_Details": "自动生成 → modules/windowinfo/Details.qml",
+  "Details": {
+    "No active client": "无活动窗口",
+    "Address: %1": "地址：%1",
+    "Position: %1, %2": "位置：%1, %2",
+    "Size: %1 x %2": "大小：%1 × %2",
+    "Workspace: %1 (%2)": "工作区：%1 (%2)",
+    "Monitor: %1 (%2) at %3, %4": "显示器：%1 (%2) 位于 %3, %4",
+    "Monitor: unknown": "显示器：未知",
+    "Initial title: %1": "初始标题：%1",
+    "Initial class: %1": "初始类名：%1",
+    "Process id: %1": "进程 ID：%1",
+    "Floating: %1": "悬浮：%1",
+    "Xwayland: %1": "XWayland：%1",
+    "Pinned: %1": "固定：%1",
+    "Fullscreen state: %1": "全屏状态：%1",
+    "Fullscreen state: unknown": "全屏状态：未知"
   },
-  "_comment_FolderContents": "文件夹内容 → components/filedialog/FolderContents.qml",
-  "FolderContents": {
-    "This folder is empty": "此文件夹为空"
+  "_comment_Preview": "自动生成 → modules/windowinfo/Preview.qml",
+  "Preview": {
+    "No active client": "无活动窗口",
+    "Try switching to a window": "请尝试切换到某个窗口",
+    "%1 on monitor %2 at %3, %4": "%1 在显示器 %2 上，位置 %3，%4"
   },
-  "_comment_FileDialog": "文件选择对话框 → components/filedialog/FileDialog.qml",
-  "FileDialog": {
-    "Select a file": "选择文件"
+  "_comment_RecordingDeleteModal": "自动生成 → modules/utilities/RecordingDeleteModal.qml",
+  "RecordingDeleteModal": {
+    "Delete recording?": "删除录制？",
+    "Recording '%1' will be permanently deleted.": "录制'%1'将被永久删除。",
+    "Cancel": "取消",
+    "Delete": "删除"
   },
-  "_comment_Sidebar": "文件对话框侧栏 → components/filedialog/Sidebar.qml",
-  "Sidebar": {
-    "Files": "文件"
+  "_comment_IdleInhibit": "自动生成 → modules/utilities/cards/IdleInhibit.qml",
+  "IdleInhibit": {
+    "Keep Awake": "保持唤醒",
+    "Preventing sleep mode": "正在阻止睡眠",
+    "Normal power management": "正常电源管理",
+    "Active since %1": "自 %1 起生效"
   },
-  "_comment_CurrentItem": "文件对话框当前项 → components/filedialog/CurrentItem.qml",
-  "CurrentItem": {
-    "\"%1\" selected": "已选择'%1'"
+  "_comment_Record": "自动生成 → modules/utilities/cards/Record.qml",
+  "Record": {
+    "Screen Recorder": "屏幕录制",
+    "Paused": "Paused",
+    "Running...": "Running...",
+    "Ready": "Ready",
+    "Record fullscreen": "全屏录制",
+    "Fullscreen": "Fullscreen",
+    "Record region": "区域录制",
+    "Region": "Region",
+    "Record fullscreen with sound": "全屏录制（含声音）",
+    "Record region with sound": "区域录制（含声音）",
+    "Recording for %1": "已录制 %1"
+  },
+  "_comment_RecordingList": "自动生成 → modules/utilities/cards/RecordingList.qml",
+  "RecordingList": {
+    "Recordings": "录制",
+    "Recording at %1": "录制于 %1",
+    "No recordings found": "未找到录制"
+  },
+  "_comment_Toggles": "自动生成 → modules/utilities/cards/Toggles.qml",
+  "Toggles": {
+    "Quick Toggles": "快捷开关"
+  },
+  "_comment_Media": "自动生成 → modules/lock/Media.qml",
+  "Media": {
+    "Nothing playing": "无播放内容",
+    "Unknown track": "Unknown track",
+    "Try playing some music!": "Try playing some music!",
+    "Unknown artist": "未知艺术家"
+  },
+  "_comment_NotifDock": "自动生成 → modules/lock/NotifDock.qml",
+  "NotifDock": {
+    "%1 notification%2": "%1 条通知%2",
+    "Notifications": "通知",
+    "Unlock for Notifications": "解锁查看通知",
+    "No Notifications": "无通知"
+  },
+  "_comment_InputField": "自动生成 → modules/lock/center/InputField.qml",
+  "InputField": {
+    "Loading...": "加载中...",
+    "You have reached the maximum number of tries": "已达到最大尝试次数",
+    "Enter your password": "输入密码"
+  },
+  "_comment_StateMessage": "自动生成 → modules/lock/center/StateMessage.qml",
+  "StateMessage": {
+    "FP ERROR: %1": "指纹错误：%1",
+    "PW ERROR: %1": "密码错误：%1",
+    "Maximum password and fingerprint attempts reached.": "密码和指纹尝试次数已达上限。",
+    "Maximum password attempts reached. Please use fingerprint.": "密码尝试次数已达上限，请使用指纹。",
+    "Maximum password attempts reached.": "密码尝试次数已达上限。",
+    "Maximum fingerprint attempts reached. Please use password.": "指纹尝试次数已达上限，请使用密码。",
+    "Incorrect password. Please try again or use fingerprint.": "密码错误，请重试或使用指纹。",
+    "Incorrect password. Please try again.": "密码错误，请重试。",
+    "Fingerprint not recognized (%1/%2). Please try again or use password.": "指纹未识别（%1/%2），请重试或使用密码。",
+    "Caps lock and Num lock are ON.\\nKeyboard layout: %1": "Caps lock and Num lock are ON.\\nKeyboard layout: %1",
+    "Caps lock is ON. Kb layout: %1": "大写锁定已开启，键盘布局：%1",
+    "Num lock is ON. Kb layout: %1": "数字锁定已开启，键盘布局：%1",
+    "Keyboard layout: %1": "键盘布局：%1",
+    "Caps lock and Num lock are ON.": "大写锁定与数字锁定已开启。",
+    "Caps lock is ON.": "大写锁定已开启。",
+    "Num lock is ON.": "数字锁定已开启。",
+    "Caps lock and Num lock are ON.\nKeyboard layout: %1": "大写锁定与数字锁定均已开启。\n键盘布局：%1"
+  },
+  "_comment_BriefInfo": "自动生成 → modules/lock/weather/BriefInfo.qml",
+  "BriefInfo": {
+    "Feels like %1": "体感 %1",
+    "High %1 • Low %2": "最高 %1 • 最低 %2"
+  },
+  "_comment_Forecast": "自动生成 → modules/lock/weather/Forecast.qml",
+  "Forecast": {
+    "Hourly forecast": "逐时预报",
+    "Now": "现在"
+  },
+  "_comment_Content": "自动生成 → modules/launcher/Content.qml",
+  "Content": {
+    "Dashboard": "仪表盘",
+    "Media": "媒体",
+    "Performance": "性能",
+    "Weather": "天气",
+    "Type \"%1\" for commands": "输入\"%1\"以使用命令"
+  },
+  "_comment_modules_dashboard_Media": "自动生成 → modules/dashboard/Media.qml",
+  "modules_dashboard_Media": {
+    "Nothing playing": "无播放内容",
+    "Play something for it to show up here!": "播放点东西吧！"
+  },
+  "_comment_Performance": "自动生成 → modules/dashboard/Performance.qml",
+  "Performance": {
+    "No widgets enabled": "未启用任何小组件",
+    "Enable widgets in the dashboard settings": "在仪表盘设置中启用组件"
+  },
+  "_comment_WeatherTab": "自动生成 → modules/dashboard/WeatherTab.qml",
+  "WeatherTab": {
+    "Loading...": "加载中...",
+    "7-Day Forecast": "7 日预报",
+    "Today": "今天"
+  },
+  "_comment_Wrapper": "自动生成 → modules/dashboard/Wrapper.qml",
+  "Wrapper": {
+    "Select a profile picture": "选择头像",
+    "Image files": "图像文件"
+  },
+  "_comment_modules_dashboard_media_Details": "自动生成 → modules/dashboard/media/Details.qml",
+  "modules_dashboard_media_Details": {
+    "Unknown artist": "未知艺术家",
+    "Unknown album": "未知专辑"
+  },
+  "_comment_LyricList": "自动生成 → modules/dashboard/media/LyricList.qml",
+  "LyricList": {
+    "Loading lyrics...": "加载歌词中...",
+    "No lyrics found": "未找到歌词"
+  },
+  "_comment_LyricsAndSelector": "自动生成 → modules/dashboard/media/LyricsAndSelector.qml",
+  "LyricsAndSelector": {
+    "Lyrics": "歌词",
+    "No players": "无播放器"
+  },
+  "_comment_LyricsInfo": "自动生成 → modules/dashboard/media/LyricsInfo.qml",
+  "LyricsInfo": {
+    "Backend: %1": "后端：%1",
+    "Selected candidate: %1 | %2 | %3": "已选候选：%1 | %2 | %3",
+    "Offset: %1 ms": "偏移：%1 毫秒",
+    "Loading...": "加载中...",
+    "No lyrics found": "未找到歌词"
+  },
+  "_comment_modules_dashboard_dash_Media": "自动生成 → modules/dashboard/dash/Media.qml",
+  "modules_dashboard_dash_Media": {
+    "No media": "无媒体",
+    "Unknown title": "未知标题",
+    "Unknown album": "未知专辑",
+    "Unknown artist": "未知艺术家"
+  },
+  "_comment_BatteryTank": "自动生成 → modules/dashboard/performance/BatteryTank.qml",
+  "BatteryTank": {
+    "Battery": "电池",
+    "Full": "已满",
+    "Charging": "充电中"
+  },
+  "_comment_HeroCard": "自动生成 → modules/dashboard/performance/HeroCard.qml",
+  "HeroCard": {
+    "Usage": "使用率"
+  },
+  "_comment_MemoryCard": "自动生成 → modules/dashboard/performance/MemoryCard.qml",
+  "MemoryCard": {
+    "Memory": "内存",
+    "Used": "已用"
+  },
+  "_comment_NetworkCard": "自动生成 → modules/dashboard/performance/NetworkCard.qml",
+  "NetworkCard": {
+    "Network": "网络",
+    "Collecting data...": "正在收集数据...",
+    "Download": "下载",
+    "Upload": "上传",
+    "Total": "总计"
+  },
+  "_comment_StorageCard": "自动生成 → modules/dashboard/performance/StorageCard.qml",
+  "StorageCard": {
+    "Used": "已用",
+    "Storage": "存储",
+    "No disks detected": "未检测到磁盘",
+    "No disks": "无磁盘"
+  },
+  "_comment_PageCompRegistry": "自动生成 → modules/nexus/PageCompRegistry.qml",
+  "PageCompRegistry": {
+    "Page under construction": "此页面正在建设中",
+    "This page will be available in a future update.": "此页面将在未来更新中提供。"
+  },
+  "_comment_PageRegistry": "自动生成 → modules/nexus/PageRegistry.qml",
+  "PageRegistry": {
+    "Wallpaper & style": "壁纸与样式",
+    "Wallpaper, fonts, colours": "壁纸、字体、颜色",
+    "Display": "显示",
+    "Output configuration": "输出配置",
+    "Network": "网络",
+    "Wi-Fi, ethernet": "Wi-Fi、有线网络",
+    "Connected devices": "已连接设备",
+    "Bluetooth, pairing": "蓝牙、配对",
+    "Audio": "音频",
+    "App volumes, sound devices": "应用音量、音频设备",
+    "Updates": "更新",
+    "System updates": "系统更新",
+    "Plugins": "插件",
+    "Manage plugins": "管理插件",
+    "Panels": "面板",
+    "Dashboard, taskbar, launcher, sidebar": "仪表盘、任务栏、启动器、侧边栏",
+    "Services": "服务",
+    "Poll intervals, lyrics backend": "轮询间隔、歌词后端",
+    "Language & region": "语言与地区",
+    "UI language, weather location, display units": "界面语言、天气位置、显示单位",
+    "About": "关于",
+    "System information, credits": "系统信息、致谢"
+  },
+  "_comment_WindowFactory": "自动生成 → modules/nexus/WindowFactory.qml",
+  "WindowFactory": {
+    "Nexus — %1": "Nexus — %1"
   },
   "_comment_AboutPage": "自动生成 → modules/nexus/pages/AboutPage.qml",
   "AboutPage": {
@@ -600,15 +415,11 @@
     "Plugins": "插件",
     "Loaded plugins": "已加载插件"
   },
-  "_comment_AppVolumes": "自动生成 → modules/nexus/pages/audio/AppVolumes.qml",
-  "AppVolumes": {
-    "App volumes": "应用音量",
-    "Adjust the volume of individual apps currently playing audio.": "调整当前正在播放音频的各个应用的音量。",
-    "No apps playing audio": "无应用播放音频"
-  },
   "_comment_AudioPage": "自动生成 → modules/nexus/pages/AudioPage.qml",
   "AudioPage": {
+    "Audio": "音频",
     "Output": "输出",
+    "Muted": "已静音",
     "No output devices": "无输出设备",
     "Input": "输入",
     "No input devices": "无输入设备",
@@ -617,95 +428,20 @@
     "1 app playing audio": "1 个应用播放音频",
     "%1 apps playing audio": "%1 个应用播放音频"
   },
-  "_comment_BarActiveWindow": "自动生成 → modules/nexus/pages/panels/taskbar/BarActiveWindow.qml",
-  "BarActiveWindow": {
-    "Only show the active window title while hovering": "仅在悬停时显示活动窗口标题",
-    "Popout on hover": "悬停弹出",
-    "Show a window details popout when hovering": "悬停时显示窗口详情弹出"
-  },
-  "_comment_BarClock": "自动生成 → modules/nexus/pages/panels/taskbar/BarClock.qml",
-  "BarClock": {
-    "Show icon": "显示图标"
-  },
-  "_comment_BarStatusIcons": "自动生成 → modules/nexus/pages/panels/taskbar/BarStatusIcons.qml",
-  "BarStatusIcons": {
-    "Visible icons": "可见图标",
-    "Keyboard layout": "键盘布局",
-    "Wi-Fi": "Wi-Fi",
-    "Caps lock": "大写锁定",
-    "Behaviour": "行为",
-    "Popout on hover": "悬停弹出",
-    "Show a details popout when hovering the status icons": "悬停状态图标时显示详情弹出"
-  },
-  "_comment_BarTray": "自动生成 → modules/nexus/pages/panels/taskbar/BarTray.qml",
-  "BarTray": {
-    "Recolour icons": "重新着色图标",
-    "Popout on hover": "悬停弹出",
-    "Show the tray menu popout when hovering": "悬停时显示托盘菜单弹出"
-  },
-  "_comment_BarWorkspaces": "自动生成 → modules/nexus/pages/panels/taskbar/BarWorkspaces.qml",
-  "BarWorkspaces": {
-    "Number of workspaces displayed": "显示的工作区数量",
-    "Active trail": "活动轨迹",
-    "Show icons of open windows on each workspace": "在每个工作区显示已打开窗口的图标",
-    "Windows on special workspaces": "特殊工作区上的窗口",
-    "Per-monitor workspaces": "每显示器工作区",
-    "Show each monitor's workspaces independently": "独立显示每个显示器的工作区"
-  },
   "_comment_BluetoothPage": "自动生成 → modules/nexus/pages/BluetoothPage.qml",
   "BluetoothPage": {
+    "Connected devices": "已连接设备",
+    "Bluetooth": "蓝牙",
     "No saved devices": "无已保存设备",
     "Bluetooth disabled": "蓝牙已禁用",
+    "Unknown": "未知",
     "Connected%1": "已连接%1",
     "Saved": "已保存",
     "Pair new device": "配对新设备",
+    "Discoverable": "可被发现",
     "Allow nearby devices to find this one": "允许附近设备发现此设备",
+    "Pairable": "可被配对",
     "Allow nearby devices to pair with this one": "允许附近设备与此设备配对"
-  },
-  "_comment_BluetoothPairing": "自动生成 → modules/nexus/pages/bluetooth/BluetoothPairing.qml",
-  "BluetoothPairing": {
-    "Pair new device": "配对新设备",
-    "Available devices": "可用设备",
-    "Searching for devices…": "搜索设备中…",
-    "Unknown device": "未知设备",
-    "Pairing...": "配对中..."
-  },
-  "_comment_BriefInfo": "自动生成 → modules/lock/weather/BriefInfo.qml",
-  "BriefInfo": {
-    "Feels like %1": "体感 %1",
-    "High %1 • Low %2": "最高 %1 • 最低 %2"
-  },
-  "_comment_BtDeviceInfo": "自动生成 → modules/nexus/pages/bluetooth/BtDeviceInfo.qml",
-  "BtDeviceInfo": {
-    "Not paired": "未配对",
-    "Device": "设备",
-    "Forget": "忘记",
-    "Allow this device to connect automatically": "允许此设备自动连接",
-    "Prevent this device from connecting": "阻止此设备连接",
-    "Allow this device to wake the system": "允许此设备唤醒系统",
-    "Unavailable": "不可用",
-    "Address": "地址"
-  },
-  "_comment_ColourSelect": "自动生成 → modules/nexus/pages/wallandstyle/ColourSelect.qml",
-  "ColourSelect": {
-    "Colours": "颜色",
-    "Page under construction": "此页面正在建设中",
-    "This page will be available in a future update.": "此页面将在未来更新中提供。"
-  },
-  "_comment_DashboardPanel": "自动生成 → modules/nexus/pages/panels/DashboardPanel.qml",
-  "DashboardPanel": {
-    "Reveal when the cursor reaches the screen edge": "光标到达屏幕边缘时显示",
-    "Tabs": "标签页",
-    "Performance widgets": "性能组件",
-    "GPU": "GPU",
-    "CPU": "CPU",
-    "Behaviour": "行为",
-    "Pixels dragged before the dashboard opens": "仪表盘打开前需拖拽的像素数"
-  },
-  "_comment_Forecast": "自动生成 → modules/lock/weather/Forecast.qml",
-  "Forecast": {
-    "Hourly forecast": "逐时预报",
-    "Now": "现在"
   },
   "_comment_LanguageAndRegion": "自动生成 → modules/nexus/pages/LanguageAndRegion.qml",
   "LanguageAndRegion": {
@@ -715,6 +451,7 @@
     "Language": "语言",
     "System language": "系统语言",
     "Follows your system locale (%1)": "跟随系统区域（%1）",
+    "Weather": "天气",
     "Location picker coming soon": "位置选择器即将推出",
     "Choose your weather location on a map in a future update": "在未来的更新中通过地图选择天气位置",
     "Units": "单位",
@@ -726,37 +463,9 @@
     "Clock format": "时钟格式",
     "How times are shown across the shell": "整个 Shell 中时间的显示方式"
   },
-  "_comment_LauncherPanel": "自动生成 → modules/nexus/pages/panels/LauncherPanel.qml",
-  "LauncherPanel": {
-    "Reveal when the cursor reaches the screen edge": "光标到达屏幕边缘时显示",
-    "Max items shown": "最大显示数",
-    "Pixels dragged before the launcher opens": "启动器打开前需拖拽的像素数",
-    "Behaviour": "行为",
-    "Navigate results with Ctrl+hjkl": "使用 Ctrl+hjkl 导航结果",
-    "Allow actions that shut down or log out": "允许关机和注销操作"
-  },
-  "_comment_LyricList": "自动生成 → modules/dashboard/media/LyricList.qml",
-  "LyricList": {
-    "Loading lyrics...": "加载歌词中...",
-    "No lyrics found": "未找到歌词"
-  },
-  "_comment_LyricsAndSelector": "自动生成 → modules/dashboard/media/LyricsAndSelector.qml",
-  "LyricsAndSelector": {
-    "Lyrics": "歌词"
-  },
-  "_comment_LyricsInfo": "自动生成 → modules/dashboard/media/LyricsInfo.qml",
-  "LyricsInfo": {
-    "Backend: %1": "后端：%1",
-    "Selected candidate: %1 | %2 | %3": "已选候选：%1 | %2 | %3",
-    "Offset: %1 ms": "偏移：%1 毫秒",
-    "No lyrics found": "未找到歌词"
-  },
-  "_comment_MemoryCard": "自动生成 → modules/dashboard/performance/MemoryCard.qml",
-  "MemoryCard": {
-    "Used": "已用"
-  },
   "_comment_NetworkPage": "自动生成 → modules/nexus/pages/NetworkPage.qml",
   "NetworkPage": {
+    "Network": "网络",
     "Wi-Fi": "Wi-Fi",
     "No networks found": "未找到网络",
     "Wi-Fi disabled": "Wi-Fi 已禁用",
@@ -764,48 +473,24 @@
     " • Saved": " · 已保存",
     "Add network": "添加网络"
   },
-  "_comment_PageCompRegistry": "自动生成 → modules/nexus/PageCompRegistry.qml",
-  "PageCompRegistry": {
-    "Page under construction": "此页面正在建设中",
-    "This page will be available in a future update.": "此页面将在未来更新中提供。"
-  },
-  "_comment_PageRegistry": "自动生成 → modules/nexus/PageRegistry.qml",
-  "PageRegistry": {
-    "Wallpaper & style": "壁纸与样式",
-    "Wallpaper, fonts, colours": "壁纸、字体、颜色",
-    "Output configuration": "输出配置",
-    "Wi-Fi, ethernet": "Wi-Fi、有线网络",
-    "Bluetooth, pairing": "蓝牙、配对",
-    "App volumes, sound devices": "应用音量、音频设备",
-    "Updates": "更新",
-    "System updates": "系统更新",
-    "Plugins": "插件",
-    "Manage plugins": "管理插件",
-    "Panels": "面板",
-    "Dashboard, taskbar, launcher, sidebar": "仪表盘、任务栏、启动器、侧边栏",
-    "Services": "服务",
-    "Poll intervals, lyrics backend": "轮询间隔、歌词后端",
-    "Language & region": "语言与地区",
-    "UI language, weather location, display units": "界面语言、天气位置、显示单位",
-    "About": "关于",
-    "System information, credits": "系统信息、致谢"
-  },
   "_comment_PanelsPage": "自动生成 → modules/nexus/pages/PanelsPage.qml",
   "PanelsPage": {
     "Panels": "面板",
+    "Dashboard": "仪表盘",
+    "Enabled": "已启用",
+    "Disabled": "已禁用",
+    "Taskbar": "任务栏",
     "Always visible": "始终可见",
     "Reveal on hover": "悬停显示",
     "Reveal on drag": "拖拽显示",
+    "Launcher": "启动器",
     "Sidebar": "侧边栏"
-  },
-  "_comment_SearchBar": "自动生成 → modules/nexus/navpane/SearchBar.qml",
-  "SearchBar": {
-    "Search settings": "搜索设置"
   },
   "_comment_ServicesPage": "自动生成 → modules/nexus/pages/ServicesPage.qml",
   "ServicesPage": {
     "Auto": "自动",
     "Generic": "通用",
+    "None": "无",
     "Services": "服务",
     "Polling": "轮询",
     "Media refresh": "媒体刷新",
@@ -831,63 +516,308 @@
     "Number of bars in the audio visualisers": "音频可视化中的柱状条数",
     "Smart colour scheme": "智能配色方案",
     "Derive theme mode and variant from the wallpaper": "从壁纸提取主题模式和变体",
-    "GPU": "GPU",
     "Monitoring: %1": "监控中：%1",
     "Override for GPU type": "覆盖 GPU 类型"
-  },
-  "_comment_SidebarPanel": "自动生成 → modules/nexus/pages/panels/SidebarPanel.qml",
-  "SidebarPanel": {
-    "Sidebar": "侧边栏",
-    "Pixels dragged before the sidebar opens": "侧边栏打开前需拖拽的像素数"
-  },
-  "_comment_StorageCard": "自动生成 → modules/dashboard/performance/StorageCard.qml",
-  "StorageCard": {
-    "Used": "已用",
-    "No disks detected": "未检测到磁盘",
-    "No disks": "无磁盘"
-  },
-  "_comment_TaskbarPanel": "自动生成 → modules/nexus/pages/panels/TaskbarPanel.qml",
-  "TaskbarPanel": {
-    "Behaviour": "行为",
-    "Keep the bar visible at all times": "始终保持任务栏可见",
-    "Reveal the bar when the cursor reaches the screen edge": "光标到达屏幕边缘时显示任务栏",
-    "Pixels dragged before the bar reveals": "任务栏显示前需拖拽的像素数",
-    "Components": "组件",
-    "Indicators, window icons": "指示器、窗口图标",
-    "Title display, popout": "标题显示、弹出",
-    "System tray icons": "系统托盘图标",
-    "Visible indicators": "可见指示器",
-    "Date, icon, background": "日期、图标、背景",
-    "Scroll actions": "滚动操作",
-    "Scroll over the workspace indicator to switch workspaces": "在工作区指示器上滚动以切换工作区",
-    "Scroll on the top half of the bar to adjust volume": "在任务栏上半部分滚动以调整音量",
-    "Scroll on the bottom half of the bar to adjust brightness": "在任务栏下半部分滚动以调整亮度"
   },
   "_comment_WallpaperAndStyle": "自动生成 → modules/nexus/pages/WallpaperAndStyle.qml",
   "WallpaperAndStyle": {
     "Wallpaper & style": "壁纸与样式",
     "Wallpaper disabled": "壁纸已禁用",
+    "Wallpapers": "壁纸",
     "Colours": "颜色",
     "Display wallpaper": "显示壁纸",
+    "Transparency": "透明度",
     "Base %1, layers %2": "基础 %1, 图层 %2",
     "Dark theme": "深色主题"
   },
+  "_comment_ColourSelect": "自动生成 → modules/nexus/pages/wallandstyle/ColourSelect.qml",
+  "ColourSelect": {
+    "Colours": "颜色",
+    "Page under construction": "此页面正在建设中",
+    "This page will be available in a future update.": "此页面将在未来更新中提供。"
+  },
   "_comment_WallpaperSelect": "自动生成 → modules/nexus/pages/wallandstyle/WallpaperSelect.qml",
   "WallpaperSelect": {
+    "Wallpapers": "壁纸",
     "Browse": "浏览",
     "Select an image": "选择图片",
+    "Image files": "图像文件",
     "Random": "随机",
     "Featured wallpaper": "精选壁纸",
     "Local wallpapers": "本地壁纸",
     "No local wallpapers found": "未找到本地壁纸"
   },
-  "_comment_modules_dashboard_Media": "自动生成 → modules/dashboard/Media.qml",
-  "modules_dashboard_Media": {
-    "Nothing playing": "无播放内容",
-    "Play something for it to show up here!": "播放点东西吧！"
+  "_comment_AppVolumes": "自动生成 → modules/nexus/pages/audio/AppVolumes.qml",
+  "AppVolumes": {
+    "App volumes": "应用音量",
+    "Adjust the volume of individual apps currently playing audio.": "调整当前正在播放音频的各个应用的音量。",
+    "No apps playing audio": "无应用播放音频"
+  },
+  "_comment_DashboardPanel": "自动生成 → modules/nexus/pages/panels/DashboardPanel.qml",
+  "DashboardPanel": {
+    "Dashboard": "仪表盘",
+    "General": "常规",
+    "Enabled": "已启用",
+    "Show on hover": "悬停显示",
+    "Reveal when the cursor reaches the screen edge": "光标到达屏幕边缘时显示",
+    "Tabs": "标签页",
+    "Media": "媒体",
+    "Performance": "性能",
+    "Weather": "天气",
+    "Performance widgets": "性能组件",
+    "Battery": "电池",
+    "Memory": "内存",
+    "Storage": "存储",
+    "Network": "网络",
+    "Behaviour": "行为",
+    "Drag threshold": "拖拽阈值",
+    "Pixels dragged before the dashboard opens": "仪表盘打开前需拖拽的像素数"
+  },
+  "_comment_LauncherPanel": "自动生成 → modules/nexus/pages/panels/LauncherPanel.qml",
+  "LauncherPanel": {
+    "Launcher": "启动器",
+    "General": "常规",
+    "Enabled": "已启用",
+    "Show on hover": "悬停显示",
+    "Reveal when the cursor reaches the screen edge": "光标到达屏幕边缘时显示",
+    "Display": "显示",
+    "Max items shown": "最大显示数",
+    "Max wallpapers": "最大壁纸数",
+    "Drag threshold": "拖拽阈值",
+    "Pixels dragged before the launcher opens": "启动器打开前需拖拽的像素数",
+    "Behaviour": "行为",
+    "Vim keybinds": "Vim 快捷键",
+    "Navigate results with Ctrl+hjkl": "使用 Ctrl+hjkl 导航结果",
+    "Enable dangerous actions": "启用危险操作",
+    "Allow actions that shut down or log out": "允许关机和注销操作",
+    "Fuzzy search": "模糊搜索",
+    "Apps": "应用",
+    "Actions": "操作",
+    "Schemes": "配色方案",
+    "Variants": "变体",
+    "Wallpapers": "壁纸"
+  },
+  "_comment_SidebarPanel": "自动生成 → modules/nexus/pages/panels/SidebarPanel.qml",
+  "SidebarPanel": {
+    "Sidebar": "侧边栏",
+    "General": "常规",
+    "Enabled": "已启用",
+    "Drag threshold": "拖拽阈值",
+    "Pixels dragged before the sidebar opens": "侧边栏打开前需拖拽的像素数"
+  },
+  "_comment_TaskbarPanel": "自动生成 → modules/nexus/pages/panels/TaskbarPanel.qml",
+  "TaskbarPanel": {
+    "Taskbar": "任务栏",
+    "Behaviour": "行为",
+    "Persistent": "常驻显示",
+    "Keep the bar visible at all times": "始终保持任务栏可见",
+    "Show on hover": "悬停显示",
+    "Reveal the bar when the cursor reaches the screen edge": "光标到达屏幕边缘时显示任务栏",
+    "Drag threshold": "拖拽阈值",
+    "Pixels dragged before the bar reveals": "任务栏显示前需拖拽的像素数",
+    "Components": "组件",
+    "Workspaces": "工作区",
+    "Indicators, window icons": "指示器、窗口图标",
+    "Active window": "活动窗口",
+    "Title display, popout": "标题显示、弹出",
+    "Tray": "托盘",
+    "System tray icons": "系统托盘图标",
+    "Status icons": "状态图标",
+    "Visible indicators": "可见指示器",
+    "Clock": "时钟",
+    "Date, icon, background": "日期、图标、背景",
+    "Scroll actions": "滚动操作",
+    "Scroll over the workspace indicator to switch workspaces": "在工作区指示器上滚动以切换工作区",
+    "Volume": "音量",
+    "Scroll on the top half of the bar to adjust volume": "在任务栏上半部分滚动以调整音量",
+    "Brightness": "亮度",
+    "Scroll on the bottom half of the bar to adjust brightness": "在任务栏下半部分滚动以调整亮度"
+  },
+  "_comment_BarActiveWindow": "自动生成 → modules/nexus/pages/panels/taskbar/BarActiveWindow.qml",
+  "BarActiveWindow": {
+    "Active window": "活动窗口",
+    "Compact": "紧凑模式",
+    "Inverted": "反转",
+    "Show on hover": "悬停显示",
+    "Only show the active window title while hovering": "仅在悬停时显示活动窗口标题",
+    "Popout on hover": "悬停弹出",
+    "Show a window details popout when hovering": "悬停时显示窗口详情弹出"
+  },
+  "_comment_BarClock": "自动生成 → modules/nexus/pages/panels/taskbar/BarClock.qml",
+  "BarClock": {
+    "Clock": "时钟",
+    "Background": "背景",
+    "Show date": "显示日期",
+    "Show icon": "显示图标"
+  },
+  "_comment_BarStatusIcons": "自动生成 → modules/nexus/pages/panels/taskbar/BarStatusIcons.qml",
+  "BarStatusIcons": {
+    "Status icons": "状态图标",
+    "Visible icons": "可见图标",
+    "Speakers": "扬声器",
+    "Microphone": "麦克风",
+    "Keyboard layout": "键盘布局",
+    "Network": "网络",
+    "Wi-Fi": "Wi-Fi",
+    "Bluetooth": "蓝牙",
+    "Battery": "电池",
+    "Caps lock": "大写锁定",
+    "Behaviour": "行为",
+    "Popout on hover": "悬停弹出",
+    "Show a details popout when hovering the status icons": "悬停状态图标时显示详情弹出"
+  },
+  "_comment_BarTray": "自动生成 → modules/nexus/pages/panels/taskbar/BarTray.qml",
+  "BarTray": {
+    "Tray": "托盘",
+    "Background": "背景",
+    "Recolour icons": "重新着色图标",
+    "Compact": "紧凑模式",
+    "Popout on hover": "悬停弹出",
+    "Show the tray menu popout when hovering": "悬停时显示托盘菜单弹出"
+  },
+  "_comment_BarWorkspaces": "自动生成 → modules/nexus/pages/panels/taskbar/BarWorkspaces.qml",
+  "BarWorkspaces": {
+    "Workspaces": "工作区",
+    "Shown": "显示数量",
+    "Number of workspaces displayed": "显示的工作区数量",
+    "Active indicator": "活动指示器",
+    "Active trail": "活动轨迹",
+    "Occupied background": "已占用背景",
+    "Show windows": "显示窗口",
+    "Show icons of open windows on each workspace": "在每个工作区显示已打开窗口的图标",
+    "Windows on special workspaces": "特殊工作区上的窗口",
+    "Max window icons": "最大窗口图标数",
+    "Per-monitor workspaces": "每显示器工作区",
+    "Show each monitor's workspaces independently": "独立显示每个显示器的工作区"
+  },
+  "_comment_BluetoothPairing": "自动生成 → modules/nexus/pages/bluetooth/BluetoothPairing.qml",
+  "BluetoothPairing": {
+    "Pair new device": "配对新设备",
+    "Available devices": "可用设备",
+    "Searching for devices…": "搜索设备中…",
+    "Unknown device": "未知设备",
+    "Pairing...": "配对中..."
+  },
+  "_comment_BtDeviceInfo": "自动生成 → modules/nexus/pages/bluetooth/BtDeviceInfo.qml",
+  "BtDeviceInfo": {
+    "Connected": "已连接",
+    "Paired": "已配对",
+    "Not paired": "未配对",
+    "Device": "设备",
+    "Forget": "忘记",
+    "Disconnect": "断开",
+    "Connect": "连接",
+    "Trusted": "已信任",
+    "Allow this device to connect automatically": "允许此设备自动连接",
+    "Blocked": "已屏蔽",
+    "Prevent this device from connecting": "阻止此设备连接",
+    "Wake allowed": "允许唤醒",
+    "Allow this device to wake the system": "允许此设备唤醒系统",
+    "Battery": "电池",
+    "Unavailable": "不可用",
+    "Address": "地址"
+  },
+  "_comment_SearchBar": "自动生成 → modules/nexus/navpane/SearchBar.qml",
+  "SearchBar": {
+    "Search settings": "搜索设置"
+  },
+  "_comment_AudioDeviceList": "自动生成 → modules/nexus/common/AudioDeviceList.qml",
+  "AudioDeviceList": {
+    "Unknown": "未知"
+  },
+  "_comment_modules_launcher_Content": "自动生成 → modules/launcher/Content.qml",
+  "modules_launcher_Content": {
+    "Type \\\"%1\\\" for commands": "Type \\\"%1\\\" for commands"
+  },
+  "_comment_ContentList": "自动生成 → modules/launcher/ContentList.qml",
+  "ContentList": {
+    "No wallpapers found": "未找到壁纸",
+    "No results": "无结果",
+    "Try putting some wallpapers in %1": "请尝试将壁纸放入 %1",
+    "Try searching for something else": "请尝试搜索其他内容"
+  },
+  "_comment_CalcItem": "自动生成 → modules/launcher/items/CalcItem.qml",
+  "CalcItem": {
+    "Calculating...": "计算中...",
+    "Type an expression to calculate": "输入表达式以计算",
+    "Open in calculator": "在计算器中打开"
+  },
+  "_comment_Actions": "自动生成 → modules/launcher/services/Actions.qml",
+  "Actions": {
+    "Unnamed": "未命名",
+    "No description": "无描述"
+  },
+  "_comment_M3Variants": "自动生成 → modules/launcher/services/M3Variants.qml",
+  "M3Variants": {
+    "Vibrant": "鲜艳",
+    "A high chroma palette. The primary palette's chroma is at maximum.": "高色度配色。主调色板色度达到最大。",
+    "Tonal Spot": "色调点缀",
+    "Default for Material theme colours. A pastel palette with a low chroma.": "Material 主题颜色的默认方案。低色度的粉彩配色。",
+    "Expressive": "表现力强",
+    "A medium chroma palette. The primary palette's hue is different from the seed colour, for variety.": "中等色度配色。主调色相与种子色不同，以增加变化。",
+    "Fidelity": "忠实",
+    "Matches the seed colour, even if the seed colour is very bright (high chroma).": "贴近种子色，即使种子色非常明亮（高色度）。",
+    "Content": "内容",
+    "Almost identical to fidelity.": "与'忠实'几乎相同。",
+    "Fruit Salad": "水果沙拉",
+    "A playful theme - the seed colour's hue does not appear in the theme.": "活泼主题——主题中不会出现种子色的色相。",
+    "Rainbow": "彩虹",
+    "Neutral": "中性",
+    "Close to grayscale, a hint of chroma.": "接近灰度，略带色度。",
+    "Monochrome": "单色",
+    "All colours are grayscale, no chroma.": "所有颜色均为灰度，无色度。"
+  },
+  "_comment_Notif": "自动生成 → modules/sidebar/Notif.qml",
+  "Notif": {
+    "No body here! :/": "暂无正文内容 :/"
   },
   "_comment_modules_sidebar_NotifDock": "自动生成 → modules/sidebar/NotifDock.qml",
   "modules_sidebar_NotifDock": {
+    "notification%1": "%1 条通知",
+    "Notifications": "通知",
     "All up to date!": "全部最新！"
-  }
+  },
+  "_comment_ConnectionInfoSection": "自动生成 → components/ConnectionInfoSection.qml",
+  "ConnectionInfoSection": {
+    "IP Address": "IP 地址",
+    "Not available": "不可用",
+    "Subnet Mask": "子网掩码",
+    "Gateway": "网关",
+    "DNS Servers": "DNS 服务器"
+  },
+  "_comment_CurrentItem": "自动生成 → components/filedialog/CurrentItem.qml",
+  "CurrentItem": {
+    "\"%1\" selected": "已选择'%1'"
+  },
+  "_comment_DialogButtons": "自动生成 → components/filedialog/DialogButtons.qml",
+  "DialogButtons": {
+    "Filter:": "筛选：",
+    "Select": "选择",
+    "Cancel": "取消"
+  },
+  "_comment_FileDialog": "自动生成 → components/filedialog/FileDialog.qml",
+  "FileDialog": {
+    "Select a file": "选择文件"
+  },
+  "_comment_FolderContents": "自动生成 → components/filedialog/FolderContents.qml",
+  "FolderContents": {
+    "This folder is empty": "此文件夹为空"
+  },
+  "_comment_Sidebar": "自动生成 → components/filedialog/Sidebar.qml",
+  "Sidebar": {
+    "Files": "文件"
+  },
+  "modules_utilities_cards_Record": {
+    "Paused": "已暂停",
+    "Running...": "录制中...",
+    "Ready": "就绪",
+    "Fullscreen": "全屏",
+    "Region": "区域"
+  },
+  "modules_lock_Media": {
+    "Unknown track": "未知曲目",
+    "Try playing some music!": "播放点音乐吧！"
+  },
+  "_comment_modules_utilities_cards_Record": "自动生成 → modules/utilities/cards/Record.qml",
+  "_comment_modules_lock_Media": "自动生成 → modules/lock/Media.qml"
 }
