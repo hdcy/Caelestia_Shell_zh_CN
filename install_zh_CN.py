@@ -30,6 +30,160 @@ def to_qml_literal(s):
     return s
 
 
+# ===== 用户补丁 =====
+USER_PATCHES = [
+    # 修复1: 启动器中断竞态 (PR #1543)
+    (
+        "modules/Shortcuts.qml",
+        '    property bool launcherInterrupted\n',
+        '    property int launcherInterruptCount\n',
+    ),
+    (
+        "modules/Shortcuts.qml",
+        '        onPressed: root.launcherInterrupted = false\n'
+        '        onReleased: {\n'
+        '            if (!root.launcherInterrupted && !root.hasFullscreen) {\n'
+        '                const visibilities = Visibilities.getForActive();\n'
+        '                visibilities.launcher = !visibilities.launcher;\n'
+        '            }\n'
+        '            root.launcherInterrupted = false;\n'
+        '        }',
+        '        onPressed: root.launcherInterruptCount = 0\n'
+        '        onReleased: {\n'
+        '            if (root.launcherInterruptCount <= 1 && !root.hasFullscreen) {\n'
+        '                const visibilities = Visibilities.getForActive();\n'
+        '                visibilities.launcher = !visibilities.launcher;\n'
+        '            }\n'
+        '            root.launcherInterruptCount = 0;\n'
+        '        }',
+    ),
+    (
+        "modules/Shortcuts.qml",
+        '        onPressed: root.launcherInterrupted = true',
+        '        onPressed: root.launcherInterruptCount++',
+    ),
+    # 修复2: 通知空按钮 — kitty 的 D-Bus default action 用空格占位, trim 后过滤
+    (
+        "services/NotifData.qml",
+        '            notif.actions = notif.notification.actions.map(a => ({',
+        '            notif.actions = notif.notification.actions\n'
+        '                .filter(a => a.text.trim().length > 0).map(a => ({',
+    ),
+    (
+        "services/NotifData.qml",
+        '        actions = notification.actions.map(a => ({',
+        '        actions = notification.actions\n'
+        '                .filter(a => a.text.trim().length > 0).map(a => ({',
+    ),
+    # 修复3: SysInfo 运行时间单位汉化 (day/s, hour/s, minute/s → 天, 小时, 分钟)
+    (
+        "utils/SysInfo.qml",
+        '            let str = "";\n'
+        '            if (days > 0)\n'
+        '                str += `${days} day${days === 1 ? "" : "s"}`;\n'
+        '            if (hours > 0)\n'
+        '                str += `${str ? ", " : ""}${hours} hour${hours === 1 ? "" : "s"}`;\n'
+        '            if (minutes > 0 || !str)\n'
+        '                str += `${str ? ", " : ""}${minutes} minute${minutes === 1 ? "" : "s"}`;',
+        '            let str = "";\n'
+        '            if (days > 0)\n'
+        '                str += `${days} 天`;\n'
+        '            if (hours > 0)\n'
+        '                str += `${str ? " " : ""}${hours} 小时`;\n'
+        '            if (minutes > 0 || !str)\n'
+        '                str += `${str ? " " : ""}${minutes} 分钟`;',
+    ),
+    # 修复4: 天气状态汉化
+    (
+        "services/Weather.qml",
+        '        const conditions = {\n'
+        '            "0": "Clear",\n'
+        '            "1": "Clear",\n'
+        '            "2": "Partly cloudy",\n'
+        '            "3": "Overcast",\n'
+        '            "45": "Fog",\n'
+        '            "48": "Fog",\n'
+        '            "51": "Drizzle",\n'
+        '            "53": "Drizzle",\n'
+        '            "55": "Drizzle",\n'
+        '            "56": "Freezing drizzle",\n'
+        '            "57": "Freezing drizzle",\n'
+        '            "61": "Light rain",\n'
+        '            "63": "Rain",\n'
+        '            "65": "Heavy rain",\n'
+        '            "66": "Light rain",\n'
+        '            "67": "Heavy rain",\n'
+        '            "71": "Light snow",\n'
+        '            "73": "Snow",\n'
+        '            "75": "Heavy snow",\n'
+        '            "77": "Snow",\n'
+        '            "80": "Light rain",\n'
+        '            "81": "Rain",\n'
+        '            "82": "Heavy rain",\n'
+        '            "85": "Light snow showers",\n'
+        '            "86": "Heavy snow showers",\n'
+        '            "95": "Thunderstorm",\n'
+        '            "96": "Thunderstorm with hail",\n'
+        '            "99": "Thunderstorm with hail"\n'
+        '        };',
+        '        const conditions = {\n'
+        '            "0": "晴朗",\n'
+        '            "1": "晴朗",\n'
+        '            "2": "多云",\n'
+        '            "3": "阴天",\n'
+        '            "45": "雾",\n'
+        '            "48": "雾",\n'
+        '            "51": "毛毛雨",\n'
+        '            "53": "毛毛雨",\n'
+        '            "55": "毛毛雨",\n'
+        '            "56": "冻毛毛雨",\n'
+        '            "57": "冻毛毛雨",\n'
+        '            "61": "小雨",\n'
+        '            "63": "雨",\n'
+        '            "65": "大雨",\n'
+        '            "66": "小雨",\n'
+        '            "67": "大雨",\n'
+        '            "71": "小雪",\n'
+        '            "73": "雪",\n'
+        '            "75": "大雪",\n'
+        '            "77": "雪",\n'
+        '            "80": "小雨",\n'
+        '            "81": "雨",\n'
+        '            "82": "大雨",\n'
+        '            "85": "小阵雪",\n'
+        '            "86": "大阵雪",\n'
+        '            "95": "雷暴",\n'
+        '            "96": "雷暴伴冰雹",\n'
+        '            "99": "雷暴伴冰雹"\n'
+        '        };',
+    ),
+]
+
+
+def apply_user_patches(target_dir, is_dry_run):
+    for rel_path, old, new in USER_PATCHES:
+        filepath = os.path.join(target_dir, rel_path)
+        if not os.path.isfile(filepath):
+            print(f"    [!] 补丁跳过 (文件不存在): {rel_path}")
+            continue
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                content = f.read()
+        except Exception as e:
+            print(f"    [!] 补丁跳过 (无法读取 {rel_path}): {e}")
+            continue
+        if old not in content:
+            print(f"    [!] 补丁跳过 (未匹配): {rel_path}")
+            continue
+        content = content.replace(old, new)
+        if is_dry_run:
+            print(f"    [预览] 补丁: {rel_path}")
+        else:
+            with open(filepath, "w", encoding="utf-8", newline="\n") as f:
+                f.write(content)
+            print(f"    [补丁] 已应用: {rel_path}")
+
+
 def parse_comment_paths(comment):
     """从 _comment 字段提取文件的相对路径列表
     支持两种格式:
@@ -58,12 +212,14 @@ def main():
     parser.add_argument("target", nargs="?", default=LINUX_TARGET, help="输出目录（默认 ~/.config/quickshell/caelestia）")
     parser.add_argument("--dry-run", action="store_true", help="预览模式：只报告将要修改的内容，不实际写入文件")
     parser.add_argument("--force", action="store_true", help="非交互模式：跳过所有确认提示，直接删除并重新复制")
+    parser.add_argument("--fix", action="store_true", help="汉化后应用用户补丁（修复已知 bug）")
     args = parser.parse_args()
 
     source_arg = args.source
     target_dir = args.target
     is_dry_run = args.dry_run
     is_force = args.force
+    apply_fixes = args.fix
 
     print("=== Caelestia Shell 汉化脚本 ===")
     if is_dry_run:
@@ -390,6 +546,12 @@ def main():
         trans_dir = os.path.join(target_dir, "assets", "translations")
         os.makedirs(trans_dir, exist_ok=True)
         shutil.copy2(JSON_FILE, trans_dir)
+
+    # 应用用户补丁 (仅 --fix 模式)
+    if apply_fixes:
+        print()
+        print("[--fix] 应用用户补丁...")
+        apply_user_patches(target_dir, is_dry_run)
 
     if is_dry_run:
         print()

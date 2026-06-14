@@ -824,5 +824,9 @@
     "Try playing some music!": "播放点音乐吧！"
   },
   "_comment_modules_utilities_cards_Record": "自动生成 → modules/utilities/cards/Record.qml",
-  "_comment_modules_lock_Media": "自动生成 → modules/lock/Media.qml"
+  "_comment_modules_lock_Media": "自动生成 → modules/lock/Media.qml",
+  "_comment_User": "⚠ 合并: modules/dashboard/dash/User.qml + modules/lock/Fetch.qml",
+  "User": {
+    "up ": "已运行 "
+  }
 }
