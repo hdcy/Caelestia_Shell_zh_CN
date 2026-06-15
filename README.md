@@ -10,8 +10,8 @@
 
 | 文件 | 说明 |
 |---|---|
-| `zh_CN.json` | 翻译字典 |
-| `install_zh_CN.py` | Python 汉化脚本|
+| `zh_CN.json` | 翻译字典（qsTr 词条 + USER_PATCHES 标注） |
+| `install_zh_CN.py` | Python 汉化脚本（含 `--fix` 用户补丁机制） |
 | `TRANSLATION_GUIDE.md` | 翻译词条编写规则（维护者参考） |
 
 ## 快速开始
@@ -33,6 +33,7 @@ python3 install_zh_CN.py
 | `target` (可选) | 输出目录，默认 `~/.config/quickshell/caelestia` |
 | `--dry-run` | 预览模式：只报告将要修改的内容，不实际写入 |
 | `--force` | 非交互模式：跳过确认提示，直接删除并重新复制 |
+| `--fix` | 汉化后应用用户补丁（修复已知 bug + 补充非 qsTr 文本汉化） |
 
 ### 预览模式
 
@@ -92,7 +93,7 @@ python install_zh_CN.py ..\.. .\test_output
 
 ### 翻译覆盖范围
 
-当前已翻译 **94 个 QML 文件**，**654 条词条**，覆盖：
+当前已翻译 **94 个 QML 文件**，**655 条词条** + **4 个 USER_PATCHES**，覆盖：
 
 - 控制中心（网络、蓝牙、音频、外观、任务栏、通知、启动器、仪表盘）
 - 锁屏界面

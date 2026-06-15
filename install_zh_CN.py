@@ -5,6 +5,13 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   python install_zh_CN.py                              # Linux 自动检测
   python install_zh_CN.py /path/to/caelestia           # 指定源目录
   python install_zh_CN.py . ./test_output              # 指定源+输出 (Windows 测试)
+  python install_zh_CN.py --force --fix                # 推荐：非交互 + 应用补丁
+
+--fix 补丁列表（install_zh_CN.py 内置）:
+  修复1: 启动器 Super 快速连按闪烁 (modules/Shortcuts.qml)
+  修复2: kitty D-Bus 空格占位导致的空白通知按钮 (services/NotifData.qml)
+  修复3: 运行时间单位汉化 day/s→天 等 (utils/SysInfo.qml)
+  修复4: 天气状态 16 种 WMO 代码全量汉化 (services/Weather.qml)
 """
 
 import argparse, json, os, sys, shutil, re
