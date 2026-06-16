@@ -28,7 +28,7 @@
     "Keyboard layout changed": "键盘布局已更改",
     "Layout changed to: %1": "布局已切换为：%1"
   },
-  "_comment_NotifData": "自动生成 + USER_PATCHES 修复2 → services/NotifData.qml (qsTr 文本 + 空按钮过滤)",
+  "_comment_NotifData": "自动生成 + USER_PATCHES 修复2 → services/NotifData.qml",
   "NotifData": {
     "now": "刚刚"
   },
@@ -53,7 +53,7 @@
     "%1: %2": "%1：%2",
     "VPN error": "VPN 错误"
   },
-  "_comment_Weather": "自动生成 + USER_PATCHES 修复4 → services/Weather.qml (qsTr 文本 + 天气状态 JS 对象汉化)",
+  "_comment_Weather": "自动生成 + USER_PATCHES 修复4 → services/Weather.qml",
   "Weather": {
     "No weather": "无天气信息"
   },
@@ -242,7 +242,7 @@
   "_comment_InputField": "自动生成 → modules/lock/center/InputField.qml",
   "InputField": {
     "Loading...": "加载中...",
-    "You have reached the maximum number of tries": "已达到最大尝试次数",
+    "Max tries reached": "已达到最大尝试次数",
     "Enter your password": "输入密码"
   },
   "_comment_StateMessage": "自动生成 → modules/lock/center/StateMessage.qml",
@@ -827,7 +827,7 @@
   "_comment_modules_lock_Media": "自动生成 → modules/lock/Media.qml",
   "_comment_SysInfo": "USER_PATCHES 修复3 → utils/SysInfo.qml (运行时间单位 day/s→天 等，非 qsTr)",
   "_comment_Shortcuts": "USER_PATCHES 修复1 → modules/Shortcuts.qml (启动器 Super 连按闪烁 bug，非 qsTr)",
-  "_comment_User": "手动添加 → modules/dashboard/dash/User.qml (仪表盘运行时间前缀)",
+  "_comment_User": "手动添加 → modules/dashboard/dash/User.qml",
   "User": {
     "up ": "已运行 "
   }
