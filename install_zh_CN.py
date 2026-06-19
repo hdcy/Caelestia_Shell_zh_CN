@@ -21,6 +21,7 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化7: 状态栏 LockStatus Enabled/Disabled → 中文 (modules/bar/popouts/LockStatus.qml)
   汉化8: 状态栏电池时间/单位 → 中文 (modules/bar/popouts/Battery.qml)
   汉化9: 电池旁路供电状态显示 (modules/bar/popouts/Battery.qml)
+  汉化10: 电池充放电功率动态显示 (modules/bar/popouts/Battery.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -253,6 +254,21 @@ LANG_PATCHES = [
         "modules/bar/popouts/Battery.qml",
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "remaining" : "until charged").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "Calculating...") : formatSeconds(UPower.displayDevice.timeToFull, "Fully charged!")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "剩余" : "充电至满").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "计算中...") : formatSeconds(UPower.displayDevice.timeToFull, "已充满")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
+    ),
+    # 汉化10: 电池充放电功率动态显示
+    (
+        "modules/bar/popouts/Battery.qml",
+        '    }\n'
+        '\n'
+        '    Loader {',
+        '    }\n'
+        '\n'
+        '    StyledText {\n'
+        '        visible: Math.abs(UPower.displayDevice.changeRate) > 0.1\n'
+        '        text: qsTr("%1功率：%2W").arg(UPower.onBattery ? "放电" : "充电").arg(Math.abs(UPower.displayDevice.changeRate).toFixed(1))\n'
+        '    }\n'
+        '\n'
+        '    Loader {',
     ),
     # 汉化9: 电池旁路供电状态显示
     (
