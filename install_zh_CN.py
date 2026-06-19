@@ -15,6 +15,8 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化1: 运行时间单位汉化 day/s→天 等 (utils/SysInfo.qml)
   汉化2: 天气状态 16 种 WMO 代码全量汉化 (services/Weather.qml)
   汉化3: 锁屏日期汉化 — JS 拼接中文星期/月份 (modules/lock/Center.qml)
+  汉化4: 桌面时钟月份汉化 — Time.format("MMMM") → 中文 (modules/background/DesktopClock.qml)
+  汉化5: 桌面时钟星期汉化 — Time.format("dddd") → 中文 (modules/background/DesktopClock.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -181,6 +183,24 @@ LANG_PATCHES = [
         '            const mon = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]\n'
         '            return week[d.getDay()] + " • " + d.getDate() + " " + mon[d.getMonth()]\n'
         '        }',
+    ),
+    # 汉化4: 桌面时钟月份汉化 — Time.format("MMMM") → 中文
+    (
+        "modules/background/DesktopClock.qml",
+        '                    text: Time.format("MMMM").toUpperCase()',
+        '                    text: {\n'
+        '                        const mon = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]\n'
+        '                        return mon[new Date().getMonth()]\n'
+        '                    }',
+    ),
+    # 汉化5: 桌面时钟星期汉化 — Time.format("dddd") → 中文
+    (
+        "modules/background/DesktopClock.qml",
+        '                    text: Time.format("dddd")',
+        '                    text: {\n'
+        '                        const week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]\n'
+        '                        return week[new Date().getDay()]\n'
+        '                    }',
     ),
 ]
 
