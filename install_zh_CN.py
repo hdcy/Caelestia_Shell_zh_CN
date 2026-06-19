@@ -17,6 +17,7 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化3: 锁屏日期汉化 — JS 拼接中文星期/月份 (modules/lock/Center.qml)
   汉化4: 桌面时钟月份汉化 — Time.format("MMMM") → 中文 (modules/background/DesktopClock.qml)
   汉化5: 桌面时钟星期汉化 — Time.format("dddd") → 中文 (modules/background/DesktopClock.qml)
+  汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数 (services/Weather.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -201,6 +202,22 @@ LANG_PATCHES = [
         '                        const week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]\n'
         '                        return week[new Date().getDay()]\n'
         '                    }',
+    ),
+    # 汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数
+    (
+        "services/Weather.qml",
+        '            const fallbackUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`;',
+        '            const fallbackUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=zh`;',
+    ),
+    (
+        "services/Weather.qml",
+        '        const nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=geocodejson`;',
+        '        const nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=geocodejson&accept-language=zh`;',
+    ),
+    (
+        "services/Weather.qml",
+        '        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=en&format=json`;',
+        '        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=zh&format=json`;',
     ),
 ]
 
