@@ -20,8 +20,7 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数 (services/Weather.qml)
   汉化7: 状态栏 LockStatus Enabled/Disabled → 中文 (modules/bar/popouts/LockStatus.qml)
   汉化8: 状态栏电池时间/单位 → 中文 (modules/bar/popouts/Battery.qml)
-  汉化9: 电池旁路供电状态显示 (modules/bar/popouts/Battery.qml)
-  汉化10: 电池充放电功率动态显示 (modules/bar/popouts/Battery.qml)
+  汉化9: 电池充放电功率常驻显示 (modules/bar/popouts/Battery.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -255,7 +254,7 @@ LANG_PATCHES = [
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "remaining" : "until charged").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "Calculating...") : formatSeconds(UPower.displayDevice.timeToFull, "Fully charged!")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "剩余" : "充电至满").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "计算中...") : formatSeconds(UPower.displayDevice.timeToFull, "已充满")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
     ),
-    # 汉化10: 电池充放电功率动态显示
+    # 汉化10: 电池充放电功率常驻显示
     (
         "modules/bar/popouts/Battery.qml",
         '    }\n'
@@ -264,46 +263,10 @@ LANG_PATCHES = [
         '    }\n'
         '\n'
         '    StyledText {\n'
-        '        visible: Math.abs(UPower.displayDevice.changeRate) > 0.1\n'
         '        text: qsTr("%1功率：%2W").arg(UPower.onBattery ? "放电" : "充电").arg(Math.abs(UPower.displayDevice.changeRate).toFixed(1))\n'
         '    }\n'
         '\n'
         '    Loader {',
-    ),
-    # 汉化9: 电池旁路供电状态显示
-    (
-        "modules/bar/popouts/Battery.qml",
-        '    width: Tokens.sizes.bar.batteryWidth\n'
-        '\n'
-        '    StyledText {',
-        '    width: Tokens.sizes.bar.batteryWidth\n'
-        '\n'
-        '    readonly property bool bypassCharging: UPower.displayDevice.isLaptopBattery && !UPower.onBattery &&\n'
-        '        UPower.displayDevice.state !== UPowerDeviceState.Charging\n'
-        '\n'
-        '    StyledText {',
-    ),
-    (
-        "modules/bar/popouts/Battery.qml",
-        '    StyledText {\n'
-        '        text: UPower.displayDevice.isLaptopBattery ? qsTr("剩余电量：%1%").arg(Math.round(UPower.displayDevice.percentage * 100)) : qsTr("未检测到电池")\n'
-        '    }\n'
-        '\n'
-        '    StyledText {\n'
-        '\n'
-        '        function formatSeconds(s: int, fallback: string): string {',
-        '    StyledText {\n'
-        '        text: UPower.displayDevice.isLaptopBattery ? qsTr("剩余电量：%1%").arg(Math.round(UPower.displayDevice.percentage * 100)) : qsTr("未检测到电池")\n'
-        '    }\n'
-        '\n'
-        '    StyledText {\n'
-        '        visible: root.bypassCharging\n'
-        '        text: qsTr("旁路供电")\n'
-        '    }\n'
-        '\n'
-        '    StyledText {\n'
-        '\n'
-        '        function formatSeconds(s: int, fallback: string): string {',
     ),
 ]
 
@@ -711,8 +674,27 @@ def main():
         print("=== 预览完成 === 使用 python install_zh_CN.py 正式运行汉化。")
     else:
         print()
-        print("=== 完成！重启 Caelestia Shell 即可生效 ===")
-        print("提示: 修改 zh_CN.json 后重新运行此脚本")
+        print("=== 完成！清理 QML 缓存并重启 Caelestia Shell ===")
+
+        import subprocess as _sp
+
+        # 清理 QML 编译缓存（否则可能使用旧缓存，不加载新补丁）
+        cache_dirs = [
+            os.path.expanduser("~/.cache/quickshell/qmlcache"),
+            os.path.expanduser("~/.cache/quickshell/qtpipelinecache-x86_64-little_endian-lp64"),
+        ]
+        for d in cache_dirs:
+            if os.path.exists(d):
+                _sp.run(["rm", "-rf", d], check=False)
+                print(f"  已清除: {d}")
+
+        # 重启 caelestia
+        print("  重启 caelestia shell ...")
+        _sp.run(["qs", "-c", "caelestia", "kill"], check=False, capture_output=True)
+        import time as _time
+        _time.sleep(1)
+        _sp.run(["caelestia", "shell", "-d"], check=False, capture_output=True)
+        print("  ✓ 已重启")
 
     # 兜底路径报告
     if fname_map:
