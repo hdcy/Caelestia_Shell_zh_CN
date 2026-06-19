@@ -20,6 +20,7 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数 (services/Weather.qml)
   汉化7: 状态栏 LockStatus Enabled/Disabled → 中文 (modules/bar/popouts/LockStatus.qml)
   汉化8: 状态栏电池时间/单位 → 中文 (modules/bar/popouts/Battery.qml)
+  汉化9: 电池旁路供电状态显示 (modules/bar/popouts/Battery.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -252,6 +253,41 @@ LANG_PATCHES = [
         "modules/bar/popouts/Battery.qml",
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "remaining" : "until charged").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "Calculating...") : formatSeconds(UPower.displayDevice.timeToFull, "Fully charged!")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "剩余" : "充电至满").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "计算中...") : formatSeconds(UPower.displayDevice.timeToFull, "已充满")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
+    ),
+    # 汉化9: 电池旁路供电状态显示
+    (
+        "modules/bar/popouts/Battery.qml",
+        '    width: Tokens.sizes.bar.batteryWidth\n'
+        '\n'
+        '    StyledText {',
+        '    width: Tokens.sizes.bar.batteryWidth\n'
+        '\n'
+        '    readonly property bool bypassCharging: UPower.displayDevice.isLaptopBattery && !UPower.onBattery &&\n'
+        '        UPower.displayDevice.state !== UPowerDeviceState.Charging\n'
+        '\n'
+        '    StyledText {',
+    ),
+    (
+        "modules/bar/popouts/Battery.qml",
+        '    StyledText {\n'
+        '        text: UPower.displayDevice.isLaptopBattery ? qsTr("剩余电量：%1%").arg(Math.round(UPower.displayDevice.percentage * 100)) : qsTr("未检测到电池")\n'
+        '    }\n'
+        '\n'
+        '    StyledText {\n'
+        '\n'
+        '        function formatSeconds(s: int, fallback: string): string {',
+        '    StyledText {\n'
+        '        text: UPower.displayDevice.isLaptopBattery ? qsTr("剩余电量：%1%").arg(Math.round(UPower.displayDevice.percentage * 100)) : qsTr("未检测到电池")\n'
+        '    }\n'
+        '\n'
+        '    StyledText {\n'
+        '        visible: root.bypassCharging\n'
+        '        text: qsTr("旁路供电")\n'
+        '    }\n'
+        '\n'
+        '    StyledText {\n'
+        '\n'
+        '        function formatSeconds(s: int, fallback: string): string {',
     ),
 ]
 
