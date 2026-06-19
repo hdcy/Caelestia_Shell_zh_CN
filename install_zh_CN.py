@@ -18,6 +18,8 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化4: 桌面时钟月份汉化 — Time.format("MMMM") → 中文 (modules/background/DesktopClock.qml)
   汉化5: 桌面时钟星期汉化 — Time.format("dddd") → 中文 (modules/background/DesktopClock.qml)
   汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数 (services/Weather.qml)
+  汉化7: 状态栏 LockStatus Enabled/Disabled → 中文 (modules/bar/popouts/LockStatus.qml)
+  汉化8: 状态栏电池时间/单位 → 中文 (modules/bar/popouts/Battery.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -218,6 +220,38 @@ LANG_PATCHES = [
         "services/Weather.qml",
         '        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=en&format=json`;',
         '        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=zh&format=json`;',
+    ),
+    # 汉化7: 状态栏 LockStatus Enabled/Disabled → 中文
+    (
+        "modules/bar/popouts/LockStatus.qml",
+        '        text: qsTr("大写锁定：%1").arg(Hypr.capsLock ? "Enabled" : "Disabled")',
+        '        text: qsTr("大写锁定：%1").arg(Hypr.capsLock ? "已启用" : "已禁用")',
+    ),
+    (
+        "modules/bar/popouts/LockStatus.qml",
+        '        text: qsTr("数字锁定：%1").arg(Hypr.numLock ? "Enabled" : "Disabled")',
+        '        text: qsTr("数字锁定：%1").arg(Hypr.numLock ? "已启用" : "已禁用")',
+    ),
+    # 汉化8: 状态栏电池时间/单位 → 中文
+    (
+        "modules/bar/popouts/Battery.qml",
+        '                comps.push(`${day} days`);',
+        '                comps.push(`${day} 天`);',
+    ),
+    (
+        "modules/bar/popouts/Battery.qml",
+        '                comps.push(`${hr} hours`);',
+        '                comps.push(`${hr} 小时`);',
+    ),
+    (
+        "modules/bar/popouts/Battery.qml",
+        '                comps.push(`${min} mins`);',
+        '                comps.push(`${min} 分钟`);',
+    ),
+    (
+        "modules/bar/popouts/Battery.qml",
+        '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "remaining" : "until charged").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "Calculating...") : formatSeconds(UPower.displayDevice.timeToFull, "Fully charged!")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
+        '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "剩余" : "充电至满").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "计算中...") : formatSeconds(UPower.displayDevice.timeToFull, "已充满")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
     ),
 ]
 
