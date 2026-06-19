@@ -10,8 +10,11 @@ Caelestia Shell 汉化脚本 (直接替换模式)
 --fix 补丁列表（install_zh_CN.py 内置）:
   修复1: 启动器 Super 快速连按闪烁 (modules/Shortcuts.qml)
   修复2: kitty D-Bus 空格占位导致的空白通知按钮 (services/NotifData.qml)
-  修复3: 运行时间单位汉化 day/s→天 等 (utils/SysInfo.qml)
-  修复4: 天气状态 16 种 WMO 代码全量汉化 (services/Weather.qml)
+
+  以下汉化补丁随脚本自动执行，不受 --fix 控制:
+  汉化1: 运行时间单位汉化 day/s→天 等 (utils/SysInfo.qml)
+  汉化2: 天气状态 16 种 WMO 代码全量汉化 (services/Weather.qml)
+  汉化3: 锁屏日期汉化 — JS 拼接中文星期/月份 (modules/lock/Center.qml)
 """
 
 import argparse, json, os, sys, shutil, re
@@ -37,8 +40,8 @@ def to_qml_literal(s):
     return s
 
 
-# ===== 用户补丁 =====
-USER_PATCHES = [
+# ===== Bug 修复（仅 --fix 模式） =====
+BUG_FIXES = [
     # 修复1: 启动器中断竞态 (PR #1543)
     (
         "modules/Shortcuts.qml",
@@ -82,7 +85,11 @@ USER_PATCHES = [
         '        actions = notification.actions\n'
         '                .filter(a => a.text.trim().length > 0).map(a => ({',
     ),
-    # 修复3: SysInfo 运行时间单位汉化 (day/s, hour/s, minute/s → 天, 小时, 分钟)
+]
+
+# ===== 汉化补丁（随脚本自动执行） =====
+LANG_PATCHES = [
+    # 汉化1: SysInfo 运行时间单位汉化 (day/s, hour/s, minute/s → 天, 小时, 分钟)
     (
         "utils/SysInfo.qml",
         '            let str = "";\n'
@@ -100,7 +107,7 @@ USER_PATCHES = [
         '            if (minutes > 0 || !str)\n'
         '                str += `${str ? " " : ""}${minutes} 分钟`;',
     ),
-    # 修复4: 天气状态汉化
+    # 汉化2: 天气状态汉化
     (
         "services/Weather.qml",
         '        const conditions = {\n'
@@ -164,31 +171,42 @@ USER_PATCHES = [
         '            "99": "雷暴伴冰雹"\n'
         '        };',
     ),
+    # 汉化3: 锁屏日期汉化 — Time.format locale 不可用，改 JS 直接拼接
+    (
+        "modules/lock/Center.qml",
+        '        text: Time.format("dddd • d MMM").toUpperCase()',
+        '        text: {\n'
+        '            const d = new Date()\n'
+        '            const week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]\n'
+        '            const mon = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]\n'
+        '            return week[d.getDay()] + " • " + d.getDate() + " " + mon[d.getMonth()]\n'
+        '        }',
+    ),
 ]
 
 
-def apply_user_patches(target_dir, is_dry_run):
-    for rel_path, old, new in USER_PATCHES:
+def apply_patches(target_dir, is_dry_run, patches, label="补丁"):
+    for rel_path, old, new in patches:
         filepath = os.path.join(target_dir, rel_path)
         if not os.path.isfile(filepath):
-            print(f"    [!] 补丁跳过 (文件不存在): {rel_path}")
+            print(f"    [!] {label}跳过 (文件不存在): {rel_path}")
             continue
         try:
             with open(filepath, "r", encoding="utf-8") as f:
                 content = f.read()
         except Exception as e:
-            print(f"    [!] 补丁跳过 (无法读取 {rel_path}): {e}")
+            print(f"    [!] {label} 跳过 (无法读取 {rel_path}): {e}")
             continue
         if old not in content:
-            print(f"    [!] 补丁跳过 (未匹配): {rel_path}")
+            print(f"    [!] {label} 跳过 (未匹配): {rel_path}")
             continue
         content = content.replace(old, new)
         if is_dry_run:
-            print(f"    [预览] 补丁: {rel_path}")
+            print(f"    [预览] {label}: {rel_path}")
         else:
             with open(filepath, "w", encoding="utf-8", newline="\n") as f:
                 f.write(content)
-            print(f"    [补丁] 已应用: {rel_path}")
+            print(f"    [{label}] 已应用: {rel_path}")
 
 
 def parse_comment_paths(comment):
@@ -554,11 +572,16 @@ def main():
         os.makedirs(trans_dir, exist_ok=True)
         shutil.copy2(JSON_FILE, trans_dir)
 
-    # 应用用户补丁 (仅 --fix 模式)
+    # 应用汉化补丁（随脚本自动执行）
+    print()
+    print("[汉化] 应用汉化补丁...")
+    apply_patches(target_dir, is_dry_run, LANG_PATCHES, "汉化补丁")
+
+    # 应用 Bug 修复（仅 --fix 模式）
     if apply_fixes:
         print()
-        print("[--fix] 应用用户补丁...")
-        apply_user_patches(target_dir, is_dry_run)
+        print("[--fix] 应用 Bug 修复...")
+        apply_patches(target_dir, is_dry_run, BUG_FIXES, "Bug修复")
 
     if is_dry_run:
         print()
