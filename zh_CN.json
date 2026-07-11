@@ -281,7 +281,8 @@
     "Dashboard": "仪表盘",
     "Media": "媒体",
     "Performance": "性能",
-    "Weather": "天气"
+    "Weather": "天气",
+    "Type \"%1\" for commands": "输入 \"%1\" 查看命令"
   },
   "_comment_modules_dashboard_Media": "自动生成 → modules/dashboard/Media.qml",
   "modules_dashboard_Media": {
