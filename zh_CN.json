@@ -41,7 +41,9 @@
   },
   "_comment_Players": "自动生成 → services/Players.qml",
   "Players": {
-    "Now Playing": "正在播放"
+    "Now Playing": "正在播放",
+    "%1 - %2": "%1 - %2",
+    "Now playing": "正在播放"
   },
   "_comment_VPN": "自动生成 → services/VPN.qml",
   "VPN": {
@@ -256,14 +258,13 @@
     "Incorrect password. Please try again or use fingerprint.": "密码错误，请重试或使用指纹。",
     "Incorrect password. Please try again.": "密码错误，请重试。",
     "Fingerprint not recognized (%1/%2). Please try again or use password.": "指纹未识别（%1/%2），请重试或使用密码。",
-    "Caps lock and Num lock are ON.\\nKeyboard layout: %1": "Caps lock and Num lock are ON.\\nKeyboard layout: %1",
+    "Caps lock and Num lock are ON.\nKeyboard layout: %1": "Caps lock and Num lock are ON.\\nKeyboard layout: %1",
     "Caps lock is ON. Kb layout: %1": "大写锁定已开启，键盘布局：%1",
     "Num lock is ON. Kb layout: %1": "数字锁定已开启，键盘布局：%1",
     "Keyboard layout: %1": "键盘布局：%1",
     "Caps lock and Num lock are ON.": "大写锁定与数字锁定已开启。",
     "Caps lock is ON.": "大写锁定已开启。",
-    "Num lock is ON.": "数字锁定已开启。",
-    "Caps lock and Num lock are ON.\nKeyboard layout: %1": "大写锁定与数字锁定均已开启。\n键盘布局：%1"
+    "Num lock is ON.": "数字锁定已开启。"
   },
   "_comment_BriefInfo": "自动生成 → modules/lock/weather/BriefInfo.qml",
   "BriefInfo": {
@@ -280,8 +281,7 @@
     "Dashboard": "仪表盘",
     "Media": "媒体",
     "Performance": "性能",
-    "Weather": "天气",
-    "Type \"%1\" for commands": "输入\"%1\"以使用命令"
+    "Weather": "天气"
   },
   "_comment_modules_dashboard_Media": "自动生成 → modules/dashboard/Media.qml",
   "modules_dashboard_Media": {
@@ -291,18 +291,15 @@
   "_comment_Performance": "自动生成 → modules/dashboard/Performance.qml",
   "Performance": {
     "No widgets enabled": "未启用任何小组件",
-    "Enable widgets in the dashboard settings": "在仪表盘设置中启用组件"
+    "Enable widgets in the dashboard settings": "在仪表盘设置中启用组件",
+    "CPU": "CPU",
+    "GPU": "GPU"
   },
   "_comment_WeatherTab": "自动生成 → modules/dashboard/WeatherTab.qml",
   "WeatherTab": {
     "Loading...": "加载中...",
     "7-Day Forecast": "7 日预报",
-    "Today": "今天",
-    "Sunrise": "日出",
-    "Sunset": "日落",
-    "Humidity": "湿度",
-    "Feels Like": "体感温度",
-    "Wind": "风速"
+    "Today": "今天"
   },
   "_comment_Wrapper": "自动生成 → modules/dashboard/Wrapper.qml",
   "Wrapper": {
@@ -343,7 +340,8 @@
   "BatteryTank": {
     "Battery": "电池",
     "Full": "已满",
-    "Charging": "充电中"
+    "Charging": "充电中",
+    "...": "..."
   },
   "_comment_HeroCard": "自动生成 → modules/dashboard/performance/HeroCard.qml",
   "HeroCard": {
@@ -397,7 +395,8 @@
     "Language & region": "语言与地区",
     "UI language, weather location, display units": "界面语言、天气位置、显示单位",
     "About": "关于",
-    "System information, credits": "系统信息、致谢"
+    "System information, credits": "系统信息、致谢",
+    "Default apps, favourites, hidden apps": "默认应用、收藏、隐藏应用"
   },
   "_comment_WindowFactory": "自动生成 → modules/nexus/WindowFactory.qml",
   "WindowFactory": {
@@ -476,7 +475,10 @@
     "Wi-Fi disabled": "Wi-Fi 已禁用",
     "Security: %1%2": "安全性：%1%2",
     " • Saved": " · 已保存",
-    "Add network": "添加网络"
+    "Add network": "添加网络",
+    " • Connected": " • 已连接",
+    "Not connected": "未连接",
+    "Wired connection": "有线连接"
   },
   "_comment_PanelsPage": "自动生成 → modules/nexus/pages/PanelsPage.qml",
   "PanelsPage": {
@@ -522,7 +524,8 @@
     "Smart colour scheme": "智能配色方案",
     "Derive theme mode and variant from the wallpaper": "从壁纸提取主题模式和变体",
     "Monitoring: %1": "监控中：%1",
-    "Override for GPU type": "覆盖 GPU 类型"
+    "Override for GPU type": "覆盖 GPU 类型",
+    "Notifications, toasts, timeouts": "通知、Toast、超时"
   },
   "_comment_WallpaperAndStyle": "自动生成 → modules/nexus/pages/WallpaperAndStyle.qml",
   "WallpaperAndStyle": {
@@ -576,7 +579,9 @@
     "Network": "网络",
     "Behaviour": "行为",
     "Drag threshold": "拖拽阈值",
-    "Pixels dragged before the dashboard opens": "仪表盘打开前需拖拽的像素数"
+    "Pixels dragged before the dashboard opens": "仪表盘打开前需拖拽的像素数",
+    "CPU": "CPU",
+    "GPU": "GPU"
   },
   "_comment_LauncherPanel": "自动生成 → modules/nexus/pages/panels/LauncherPanel.qml",
   "LauncherPanel": {
@@ -730,10 +735,6 @@
   "AudioDeviceList": {
     "Unknown": "未知"
   },
-  "_comment_modules_launcher_Content": "自动生成 → modules/launcher/Content.qml",
-  "modules_launcher_Content": {
-    "Type \\\"%1\\\" for commands": "Type \\\"%1\\\" for commands"
-  },
   "_comment_ContentList": "自动生成 → modules/launcher/ContentList.qml",
   "ContentList": {
     "No wallpapers found": "未找到壁纸",
@@ -782,18 +783,6 @@
     "Notifications": "通知",
     "All up to date!": "全部最新！"
   },
-  "_comment_ConnectionInfoSection": "自动生成 → components/ConnectionInfoSection.qml",
-  "ConnectionInfoSection": {
-    "IP Address": "IP 地址",
-    "Not available": "不可用",
-    "Subnet Mask": "子网掩码",
-    "Gateway": "网关",
-    "DNS Servers": "DNS 服务器"
-  },
-  "_comment_CurrentItem": "自动生成 → components/filedialog/CurrentItem.qml",
-  "CurrentItem": {
-    "\"%1\" selected": "已选择'%1'"
-  },
   "_comment_DialogButtons": "自动生成 → components/filedialog/DialogButtons.qml",
   "DialogButtons": {
     "Filter:": "筛选：",
@@ -826,9 +815,101 @@
   "_comment_modules_utilities_cards_Record": "自动生成 → modules/utilities/cards/Record.qml",
   "_comment_modules_lock_Media": "自动生成 → modules/lock/Media.qml",
   "_comment_SysInfo": "USER_PATCHES 修复3 → utils/SysInfo.qml (运行时间单位 day/s→天 等，非 qsTr)",
-  "_comment_Shortcuts": "USER_PATCHES 修复1 → modules/Shortcuts.qml (启动器 Super 连按闪烁 bug，非 qsTr)",
-  "_comment_User": "手动添加 → modules/dashboard/dash/User.qml",
-  "User": {
-    "up ": "已运行 "
+  "_comment_EthernetDetailPage": "自动生成 → modules/nexus/pages/network/EthernetDetailPage.qml",
+  "EthernetDetailPage": {
+    "1.1.1.1, 8.8.8.8": "1.1.1.1, 8.8.8.8",
+    "192.168.1.1": "192.168.1.1",
+    "192.168.1.50/24": "192.168.1.50/24",
+    "Address (CIDR)": "地址 (CIDR)",
+    "Apply": "应用",
+    "Automatic (DHCP)": "自动 (DHCP)",
+    "Automatic, DNS only": "仅 DNS 自动",
+    "Comma-separated": "逗号分隔",
+    "Connection": "连接",
+    "DNS servers": "DNS 服务器",
+    "Enter a valid address in CIDR notation": "请输入有效的 CIDR 格式地址",
+    "Enter valid DNS server addresses": "请输入有效的 DNS 服务器地址",
+    "IP address": "IP 地址",
+    "IP and prefix, e.g. 192.168.1.50/24": "IP 及前缀，例如 192.168.1.50/24",
+    "IP assignment": "IP 分配",
+    "IPv4": "IPv4",
+    "Interface": "接口",
+    "MAC address": "MAC 地址",
+    "Manual": "手动",
+    "Not connected": "未连接",
+    "Speed": "速度",
+    "Status": "状态",
+    "—": "—"
+  },
+  "_comment_NotificationsPage": "自动生成 → modules/nexus/pages/services/NotificationsPage.qml",
+  "NotificationsPage": {
+    "Audio input changes": "音频输入变化",
+    "Audio output changes": "音频输出变化",
+    "Caps lock changes": "大写锁定变化",
+    "Charging changes": "充电状态变化",
+    "Default timeout": "默认超时",
+    "Dismiss notifications after their timeout": "超时后关闭通知",
+    "Do not disturb changes": "免打扰变化",
+    "Expire automatically": "自动过期",
+    "Game mode changes": "游戏模式变化",
+    "Group preview count": "分组预览数量",
+    "Important": "重要",
+    "Keyboard layout changes": "键盘布局变化",
+    "Maximum number of toasts shown at once": "同时显示的最大 Toast 数量",
+    "Notifications shown per group before collapsing": "每组折叠前显示的通知数",
+    "Now playing": "正在播放",
+    "Num lock changes": "数字锁定变化",
+    "Off": "关闭",
+    "On": "开启",
+    "Open expanded": "默认展开",
+    "Show in fullscreen": "全屏时显示",
+    "Show notifications expanded by default": "默认展开显示通知",
+    "Time before a notification dismisses (ms)": "通知自动关闭前的显示时间 (毫秒)",
+    "Toast events": "Toast 事件",
+    "Toasts": "Toast",
+    "VPN changes": "VPN 变化",
+    "Visible toasts": "可见 Toast",
+    "Whether notifications appear over fullscreen apps": "通知是否覆盖在全屏应用上",
+    "Whether toasts appear over fullscreen apps": "Toast 是否覆盖在全屏应用上"
+  },
+  "_comment_AppsPage": "自动生成 → modules/nexus/pages/AppsPage.qml",
+  "AppsPage": {
+    "All apps": "全部应用",
+    "Browse installed apps, set favourites and hidden": "浏览已安装的应用，设置收藏和隐藏",
+    "Default applications": "默认应用",
+    "Default apps, favourites, hidden apps": "默认应用、收藏、隐藏应用",
+    "File manager": "文件管理器",
+    "Library": "库",
+    "Media playback": "媒体播放",
+    "Terminal": "终端"
+  },
+  "_comment_AppInfo": "自动生成 → modules/nexus/pages/apps/AppInfo.qml",
+  "AppInfo": {
+    "App ID": "应用 ID",
+    "App info": "应用信息",
+    "Command": "命令",
+    "Details": "详情",
+    "Favourite": "收藏",
+    "Hidden": "隐藏",
+    "Hide from the launcher": "从启动器隐藏",
+    "Matched by a regex in favouriteApps — edit the config file to change": "由 favouriteApps 正则匹配 — 编辑配置文件修改",
+    "Matched by a regex in hiddenApps — edit the config file to change": "由 hiddenApps 正则匹配 — 编辑配置文件修改",
+    "Pin to the top of the launcher": "固定到启动器顶部"
+  },
+  "_comment_EthernetSection": "自动生成 → modules/nexus/common/EthernetSection.qml",
+  "EthernetSection": {
+    "Data usage: %1": "数据用量：%1",
+    "Local IP Address": "本地 IP 地址",
+    "Not connected • %1": "未连接 • %1",
+    "Primary DNS": "首选 DNS",
+    "Wired connection": "有线连接"
+  },
+  "_comment_ExtraIndicator": "自动生成 → components/widgets/ExtraIndicator.qml",
+  "ExtraIndicator": {
+    "+%1": "+%1"
+  },
+  "_comment_AllApps": "自动生成 → modules/nexus/pages/apps/AllApps.qml",
+  "AllApps": {
+    "All apps": "全部应用"
   }
 }

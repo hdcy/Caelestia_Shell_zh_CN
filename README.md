@@ -2,16 +2,18 @@
 
 将 [Caelestia Shell](https://github.com/caelestia-dots/caelestia) 界面从英文替换为简体中文。
 
+**适配版本：caelestia-shell 2.1.0 / caelestia-cli 1.1.1 / Quickshell 0.3.0**
+
 ## 原理
 
-脚本将源目录（`/etc/xdg/quickshell/Caelestia`）复制到用户配置目录（`~/.config/quickshell/caelestia`），然后根据 `zh_CN.json` 翻译字典，直接将 QML 文件中的英文字符串替换为中文。Quickshell 会优先加载用户配置目录。
+脚本将源目录（`/etc/xdg/quickshell/caelestia`）复制到用户配置目录（`~/.config/quickshell/caelestia`），然后根据 `zh_CN.json` 翻译字典，直接将 QML 文件中的英文字符串替换为中文。Quickshell 会优先加载用户配置目录。
 
 ## 文件说明
 
 | 文件 | 说明 |
 |---|---|
-| `zh_CN.json` | 翻译字典（qsTr 词条，655+ 条） |
-| `install_zh_CN.py` | Python 汉化脚本（含 LANG_PATCHES 自动汉化 + `--fix` Bug修复） |
+| `zh_CN.json` | 翻译字典（624 条词条，96 个上下文） |
+| `install_zh_CN.py` | Python 汉化脚本（含 12 个 LANG_PATCHES 自动汉化 + `--fix` 5 个 Bug 修复） |
 | `TRANSLATION_GUIDE.md` | 翻译词条编写规则（维护者参考） |
 
 ## 执行流程
@@ -22,8 +24,8 @@
 
 | 阶段 | 触发 | 内容 |
 |------|------|------|
-| zh_CN.json | 自动 | 655+ 条 qsTr 字符串替换 |
-| LANG_PATCHES | 自动 | 运行时间单位 / 天气状态 / 锁屏日期 / 桌面时钟 / 天气城市名 / 电池功率常驻 汉化 |
+| zh_CN.json | 自动 | 624 条 qsTr 字符串替换 |
+| LANG_PATCHES | 自动 | 运行时间单位 / 天气状态 / 锁屏日期 / 桌面时钟 / 锁定状态 / 电池时间 / 电池功率常驻 汉化 |
 | BUG_FIXES | `--fix` | 启动器竞态 / 通知空按钮 修复 |
 
 ## 快速开始
@@ -31,17 +33,23 @@
 ### Linux 部署
 
 ```bash
-cd Caelestia_zh_CN
-python3 install_zh_CN.py
+cd Caelestia_Shell_zh_CN
+python install_zh_CN.py
 ```
 
 脚本会自动检测系统目录并汉化。完成后重启 Caelestia Shell 即可生效。
+
+推荐用法：
+
+```bash
+python install_zh_CN.py --force --fix
+```
 
 ### 命令行参数
 
 | 参数 | 说明 |
 |------|------|
-| `source` (可选) | 源目录路径，默认自动检测 `/etc/xdg/quickshell/caelestia` |
+| `source` (可选) | 源目录路径，默认 `/etc/xdg/quickshell/caelestia` |
 | `target` (可选) | 输出目录，默认 `~/.config/quickshell/caelestia` |
 | `--dry-run` | 预览模式：只报告将要修改的内容，不实际写入 |
 | `--force` | 非交互模式：跳过确认提示，直接删除并重新复制 |
@@ -52,32 +60,19 @@ python3 install_zh_CN.py
 caelestia-shell 更新后，可以先预览哪些文件需要重新汉化：
 
 ```bash
-python3 install_zh_CN.py --dry-run
+python install_zh_CN.py --dry-run
 ```
 
 ### 指定源目录
 
 ```bash
-python3 install_zh_CN.py /custom/path/to/caelestia
+python install_zh_CN.py /custom/path/to/caelestia
 ```
 
 ### 指定源目录和输出目录
 
 ```bash
-python3 install_zh_CN.py /path/to/source /path/to/output
-```
-
-### 非交互模式（自动化）
-
-```bash
-python3 install_zh_CN.py --force
-```
-
-### Windows 测试
-
-```powershell
-cd assets\translations
-python install_zh_CN.py ..\.. .\test_output
+python install_zh_CN.py /path/to/source /path/to/output
 ```
 
 ## 注意事项
@@ -96,7 +91,7 @@ python install_zh_CN.py ..\.. .\test_output
 
 ### 源文件不会被修改
 
-脚本只修改输出目录（用户配置目录）中的副本，不会修改 `/etc/xdg/quickshell/Caelestia` 下的源文件。
+脚本只修改输出目录（用户配置目录）中的副本，不会修改 `/etc/xdg/quickshell/caelestia` 下的源文件。
 
 ### 依赖
 
@@ -105,14 +100,14 @@ python install_zh_CN.py ..\.. .\test_output
 
 ### 翻译覆盖范围
 
-当前已翻译 **90+ 个 QML 文件**，**535+ 条词条** + **2 个 BUG_FIXES**（`--fix`）+ **9 个 LANG_PATCHES**（自动），覆盖：
+**96 个 QML 文件，624 条词条 + 5 个 BUG_FIXES（`--fix`）+ 12 个 LANG_PATCHES（自动）**，覆盖：
 
-- 控制中心（网络、蓝牙、音频、外观、任务栏、通知、启动器、仪表盘）
+- 控制中心 / Nexus（网络、蓝牙、音频、外观、任务栏、通知、启动器、仪表盘、语言与地区、服务）
 - 锁屏界面
 - 顶栏弹出面板（电池、网络、蓝牙、托盘、键盘布局）
 - 仪表盘（媒体、性能监控、天气）
 - 文件对话框
-- 通知、录屏、窗口信息等
+- 通知、录屏、窗口信息、会话管理等
 
 ### 更新翻译后
 

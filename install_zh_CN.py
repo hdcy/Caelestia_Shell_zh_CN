@@ -17,10 +17,10 @@ Caelestia Shell 汉化脚本 (直接替换模式)
   汉化3: 锁屏日期汉化 — JS 拼接中文星期/月份 (modules/lock/Center.qml)
   汉化4: 桌面时钟月份汉化 — Time.format("MMMM") → 中文 (modules/background/DesktopClock.qml)
   汉化5: 桌面时钟星期汉化 — Time.format("dddd") → 中文 (modules/background/DesktopClock.qml)
-  汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数 (services/Weather.qml)
+  汉化6: [已废弃] 天气城市名语言 — 新版使用 Qt.locale() 自动设置，无需补丁
   汉化7: 状态栏 LockStatus Enabled/Disabled → 中文 (modules/bar/popouts/LockStatus.qml)
   汉化8: 状态栏电池时间/单位 → 中文 (modules/bar/popouts/Battery.qml)
-  汉化9: 电池充放电功率常驻显示 (modules/bar/popouts/Battery.qml)
+  汉化9: 电池充放电功率常驻显示 (modules/bar/popouts/Battery.qml) [注释写汉化10，保留原编号]
 """
 
 import argparse, json, os, sys, shutil, re
@@ -206,22 +206,7 @@ LANG_PATCHES = [
         '                        return week[new Date().getDay()]\n'
         '                    }',
     ),
-    # 汉化6: 天气城市名中文 — Nominatim/BigDataCloud/Open-Meteo 语言参数
-    (
-        "services/Weather.qml",
-        '            const fallbackUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`;',
-        '            const fallbackUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=zh`;',
-    ),
-    (
-        "services/Weather.qml",
-        '        const nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=geocodejson`;',
-        '        const nominatimUrl = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=geocodejson&accept-language=zh`;',
-    ),
-    (
-        "services/Weather.qml",
-        '        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=en&format=json`;',
-        '        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=zh&format=json`;',
-    ),
+    # 汉化6: 天气城市名中文 — 新版已使用 Qt.locale() 动态设置语言，无需补丁
     # 汉化7: 状态栏 LockStatus Enabled/Disabled → 中文
     (
         "modules/bar/popouts/LockStatus.qml",
@@ -254,7 +239,7 @@ LANG_PATCHES = [
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "remaining" : "until charged").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "Calculating...") : formatSeconds(UPower.displayDevice.timeToFull, "Fully charged!")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
         '        text: UPower.displayDevice.isLaptopBattery ? qsTr("时间 %1：%2").arg(UPower.onBattery ? "剩余" : "充电至满").arg(UPower.onBattery ? formatSeconds(UPower.displayDevice.timeToEmpty, "计算中...") : formatSeconds(UPower.displayDevice.timeToFull, "已充满")) : qsTr("电源策略：%1").arg(PowerProfile.toString(PowerProfiles.profile))',
     ),
-    # 汉化10: 电池充放电功率常驻显示
+    # 汉化9: 电池充放电功率常驻显示 [原注释误写汉化10]
     (
         "modules/bar/popouts/Battery.qml",
         '    }\n'
