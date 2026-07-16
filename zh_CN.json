@@ -288,7 +288,8 @@
     "Dashboard": "仪表盘",
     "Media": "媒体",
     "Performance": "性能",
-    "Weather": "天气"
+    "Weather": "天气",
+    "Type \"%1\" for commands": "输入 \"%1\" 搜索命令"
   },
   "_comment_modules_dashboard_Media": "自动生成 → modules/dashboard/Media.qml",
   "modules_dashboard_Media": {
@@ -374,6 +375,10 @@
     "No disks detected": "未检测到磁盘",
     "No disks": "无磁盘"
   },
+  "_comment_NavPane": "自动生成 → modules/nexus/NavPane.qml",
+  "NavPane": {
+    "Search settings": "搜索设置"
+  },
   "_comment_PageCompRegistry": "自动生成 → modules/nexus/PageCompRegistry.qml",
   "PageCompRegistry": {
     "Page under construction": "此页面正在建设中",
@@ -403,7 +408,8 @@
     "UI language, weather location, display units": "界面语言、天气位置、显示单位",
     "About": "关于",
     "System information, credits": "系统信息、致谢",
-    "Default apps, favourites, hidden apps": "默认应用、收藏、隐藏应用"
+    "Default apps, favourites, hidden apps": "默认应用、收藏、隐藏应用",
+    "Apps": "应用"
   },
   "_comment_WindowFactory": "自动生成 → modules/nexus/WindowFactory.qml",
   "WindowFactory": {
@@ -530,7 +536,8 @@
     "Derive theme mode and variant from the wallpaper": "从壁纸提取主题模式和变体",
     "Monitoring: %1": "监控中：%1",
     "Override for GPU type": "覆盖 GPU 类型",
-    "Notifications, toasts, timeouts": "通知、Toast、超时"
+    "Notifications, toasts, timeouts": "通知、Toast、超时",
+    "Notifications": "通知"
   },
   "_comment_WallpaperAndStyle": "自动生成 → modules/nexus/pages/WallpaperAndStyle.qml",
   "WallpaperAndStyle": {
@@ -843,7 +850,10 @@
     "Enter a valid gateway address": "请输入有效的网关地址",
     "Gateway": "网关",
     "%1 MHz": "%1 MHz",
-    "%1%": "%1%"
+    "%1%": "%1%",
+    "Connect": "连接",
+    "Connected": "已连接",
+    "Disconnect": "断开"
   },
   "_comment_NotificationsPage": "自动生成 → modules/nexus/pages/services/NotificationsPage.qml",
   "NotificationsPage": {
@@ -874,7 +884,9 @@
     "VPN changes": "VPN 变化",
     "Visible toasts": "可见 Toast",
     "Whether notifications appear over fullscreen apps": "通知是否覆盖在全屏应用上",
-    "Whether toasts appear over fullscreen apps": "Toast 是否覆盖在全屏应用上"
+    "Whether toasts appear over fullscreen apps": "Toast 是否覆盖在全屏应用上",
+    "Notifications": "通知",
+    "Toast": "弹窗通知"
   },
   "_comment_AppsPage": "自动生成 → modules/nexus/pages/AppsPage.qml",
   "AppsPage": {
@@ -884,7 +896,9 @@
     "File manager": "文件管理器",
     "Library": "库",
     "Media playback": "媒体播放",
-    "Terminal": "终端"
+    "Terminal": "终端",
+    "Apps": "应用",
+    "Audio": "音频"
   },
   "_comment_AppInfo": "自动生成 → modules/nexus/pages/apps/AppInfo.qml",
   "AppInfo": {
@@ -897,7 +911,8 @@
     "Hide from the launcher": "从启动器隐藏",
     "Matched by a regex in favouriteApps — edit the config file to change": "由 favouriteApps 正则匹配 — 编辑配置文件修改",
     "Matched by a regex in hiddenApps — edit the config file to change": "由 hiddenApps 正则匹配 — 编辑配置文件修改",
-    "Pin to the top of the launcher": "固定到启动器顶部"
+    "Pin to the top of the launcher": "固定到启动器顶部",
+    "Launcher": "启动器"
   },
   "_comment_EthernetSection": "自动生成 → modules/nexus/common/EthernetSection.qml",
   "EthernetSection": {
@@ -905,7 +920,9 @@
     "Local IP Address": "本地 IP 地址",
     "Not connected • %1": "未连接 • %1",
     "Primary DNS": "首选 DNS",
-    "Wired connection": "有线连接"
+    "Wired connection": "有线连接",
+    "Connected": "已连接",
+    "Not connected": "未连接"
   },
   "_comment_ExtraIndicator": "自动生成 → components/widgets/ExtraIndicator.qml",
   "ExtraIndicator": {
@@ -938,6 +955,7 @@
   "NetworkDetailPage": {
     "Forget": "忘记",
     "Disconnect": "断开",
+    "Network": "网络",
     "Connection": "连接",
     "Signal": "信号",
     "%1%": "%1%",
