@@ -42,8 +42,7 @@
   "_comment_Players": "自动生成 → services/Players.qml",
   "Players": {
     "Now Playing": "正在播放",
-    "%1 - %2": "%1 - %2",
-    "Now playing": "正在播放"
+    "%1 - %2": "%1 - %2"
   },
   "_comment_VPN": "自动生成 → services/VPN.qml",
   "VPN": {
@@ -245,26 +244,34 @@
   "InputField": {
     "Loading...": "加载中...",
     "Max tries reached": "已达到最大尝试次数",
-    "Enter your password": "输入密码"
+    "Enter your password": "输入密码",
+    "Scanning face...": "正在扫描人脸..."
   },
   "_comment_StateMessage": "自动生成 → modules/lock/center/StateMessage.qml",
   "StateMessage": {
     "FP ERROR: %1": "指纹错误：%1",
     "PW ERROR: %1": "密码错误：%1",
-    "Maximum password and fingerprint attempts reached.": "密码和指纹尝试次数已达上限。",
     "Maximum password attempts reached. Please use fingerprint.": "密码尝试次数已达上限，请使用指纹。",
     "Maximum password attempts reached.": "密码尝试次数已达上限。",
     "Maximum fingerprint attempts reached. Please use password.": "指纹尝试次数已达上限，请使用密码。",
     "Incorrect password. Please try again or use fingerprint.": "密码错误，请重试或使用指纹。",
     "Incorrect password. Please try again.": "密码错误，请重试。",
     "Fingerprint not recognized (%1/%2). Please try again or use password.": "指纹未识别（%1/%2），请重试或使用密码。",
-    "Caps lock and Num lock are ON.\nKeyboard layout: %1": "Caps lock and Num lock are ON.\\nKeyboard layout: %1",
-    "Caps lock is ON. Kb layout: %1": "大写锁定已开启，键盘布局：%1",
     "Num lock is ON. Kb layout: %1": "数字锁定已开启，键盘布局：%1",
     "Keyboard layout: %1": "键盘布局：%1",
+    "Num lock is ON.": "数字锁定已开启。",
+    "FACE ERROR: %1": "人脸错误：%1",
+    "Face not recognized (%1/%2). Please try again or use password.": "人脸未识别（%1/%2），请重试或使用密码",
+    "Face not recognized (%1/%2). Please try again.": "人脸未识别（%1/%2），请重试",
+    "Fingerprint not recognized (%1/%2). Please try again.": "指纹未识别（%1/%2），请重试",
+    "Incorrect password. Please try again or use face.": "密码错误，请重试或使用人脸",
+    "Maximum attempts for all authentication methods reached.": "所有认证方式尝试次数已达上限",
+    "Maximum face attempts reached. Please use password.": "人脸尝试次数已达上限，请使用密码",
+    "Maximum password attempts reached. Please use face.": "密码尝试次数已达上限，请使用人脸",
+    "Caps lock is ON. Kb layout: %1": "大写锁定已开启，键盘布局：%1",
     "Caps lock and Num lock are ON.": "大写锁定与数字锁定已开启。",
     "Caps lock is ON.": "大写锁定已开启。",
-    "Num lock is ON.": "数字锁定已开启。"
+    "Caps lock and Num lock are ON.\nKeyboard layout: %1": "大写锁定与数字锁定已开启。\n键盘布局：%1"
   },
   "_comment_BriefInfo": "自动生成 → modules/lock/weather/BriefInfo.qml",
   "BriefInfo": {
@@ -281,8 +288,7 @@
     "Dashboard": "仪表盘",
     "Media": "媒体",
     "Performance": "性能",
-    "Weather": "天气",
-    "Type \"%1\" for commands": "输入 \"%1\" 查看命令"
+    "Weather": "天气"
   },
   "_comment_modules_dashboard_Media": "自动生成 → modules/dashboard/Media.qml",
   "modules_dashboard_Media": {
@@ -477,9 +483,7 @@
     "Security: %1%2": "安全性：%1%2",
     " • Saved": " · 已保存",
     "Add network": "添加网络",
-    " • Connected": " • 已连接",
-    "Not connected": "未连接",
-    "Wired connection": "有线连接"
+    " • Connected": " • 已连接"
   },
   "_comment_PanelsPage": "自动生成 → modules/nexus/pages/PanelsPage.qml",
   "PanelsPage": {
@@ -729,9 +733,7 @@
     "Address": "地址"
   },
   "_comment_SearchBar": "自动生成 → modules/nexus/navpane/SearchBar.qml",
-  "SearchBar": {
-    "Search settings": "搜索设置"
-  },
+  "SearchBar": {},
   "_comment_AudioDeviceList": "自动生成 → modules/nexus/common/AudioDeviceList.qml",
   "AudioDeviceList": {
     "Unknown": "未知"
@@ -818,9 +820,6 @@
   "_comment_SysInfo": "USER_PATCHES 修复3 → utils/SysInfo.qml (运行时间单位 day/s→天 等，非 qsTr)",
   "_comment_EthernetDetailPage": "自动生成 → modules/nexus/pages/network/EthernetDetailPage.qml",
   "EthernetDetailPage": {
-    "1.1.1.1, 8.8.8.8": "1.1.1.1, 8.8.8.8",
-    "192.168.1.1": "192.168.1.1",
-    "192.168.1.50/24": "192.168.1.50/24",
     "Address (CIDR)": "地址 (CIDR)",
     "Apply": "应用",
     "Automatic (DHCP)": "自动 (DHCP)",
@@ -840,7 +839,11 @@
     "Not connected": "未连接",
     "Speed": "速度",
     "Status": "状态",
-    "—": "—"
+    "—": "—",
+    "Enter a valid gateway address": "请输入有效的网关地址",
+    "Gateway": "网关",
+    "%1 MHz": "%1 MHz",
+    "%1%": "%1%"
   },
   "_comment_NotificationsPage": "自动生成 → modules/nexus/pages/services/NotificationsPage.qml",
   "NotificationsPage": {
@@ -878,7 +881,6 @@
     "All apps": "全部应用",
     "Browse installed apps, set favourites and hidden": "浏览已安装的应用，设置收藏和隐藏",
     "Default applications": "默认应用",
-    "Default apps, favourites, hidden apps": "默认应用、收藏、隐藏应用",
     "File manager": "文件管理器",
     "Library": "库",
     "Media playback": "媒体播放",
@@ -912,5 +914,55 @@
   "_comment_AllApps": "自动生成 → modules/nexus/pages/apps/AllApps.qml",
   "AllApps": {
     "All apps": "全部应用"
+  },
+  "_comment_AddNetworkPage": "自动生成 → modules/nexus/pages/network/AddNetworkPage.qml",
+  "AddNetworkPage": {
+    "Add network": "添加网络",
+    "Enter the details below to manually connect to a network.": "请填写以下信息手动连接网络",
+    "Network name (SSID)": "网络名称 (SSID)",
+    "e.g. MyHiddenNetwork": "例如：隐藏网络",
+    "Network name is required": "网络名称为必填",
+    "Hidden network": "隐藏网络",
+    "Actively probe for a network that doesn't broadcast its name": "主动扫描隐藏网络",
+    "Security": "安全性",
+    "WPA/WPA2/WPA3 Personal": "WPA/WPA2/WPA3 个人",
+    "None (open)": "无 (开放)",
+    "WPA passwords are at least 8 characters": "WPA 密码至少需要 8 个字符",
+    "Connection failed — check the password": "连接失败——请检查密码",
+    "Password must be at least 8 characters": "密码至少需要 8 个字符",
+    "Password": "密码",
+    "Cancel": "取消",
+    "Connect": "连接"
+  },
+  "_comment_NetworkDetailPage": "自动生成 → modules/nexus/pages/network/NetworkDetailPage.qml",
+  "NetworkDetailPage": {
+    "Forget": "忘记",
+    "Disconnect": "断开",
+    "Connection": "连接",
+    "Signal": "信号",
+    "%1%": "%1%",
+    "Security": "安全性",
+    "Open": "开放",
+    "Frequency": "频率",
+    "%1 MHz": "%1 MHz",
+    "IP address": "IP 地址",
+    "Gateway": "网关",
+    "MAC address": "MAC 地址",
+    "Behaviour": "行为",
+    "Connect automatically": "自动连接",
+    "Join this network when it's in range": "在范围内时自动加入此网络",
+    "IPv4": "IPv4",
+    "IP assignment": "IP 分配",
+    "Automatic (DHCP)": "自动 (DHCP)",
+    "Automatic, DNS only": "仅 DNS 自动",
+    "Manual": "手动",
+    "Address (CIDR)": "地址 (CIDR)",
+    "IP and prefix, e.g. 192.168.1.50/24": "IP 及前缀，例如 192.168.1.50/24",
+    "Enter a valid address in CIDR notation": "请输入有效的 CIDR 格式地址",
+    "Enter a valid gateway address": "请输入有效的网关地址",
+    "DNS servers": "DNS 服务器",
+    "Comma-separated": "逗号分隔",
+    "Enter valid DNS server addresses": "请输入有效的 DNS 服务器地址",
+    "Apply": "应用"
   }
 }
