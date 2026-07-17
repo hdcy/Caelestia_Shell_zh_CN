@@ -2,7 +2,7 @@
 
 将 [Caelestia Shell](https://github.com/caelestia-dots/caelestia) 界面从英文替换为简体中文。
 
-**适配版本：caelestia-shell 2.1.0 / caelestia-cli 1.1.1 / Quickshell 0.3.0**
+**适配版本：caelestia-shell 2.2.0 / caelestia-cli 1.1.1 / Quickshell-git (latest)**
 
 ## 原理
 
@@ -12,8 +12,8 @@
 
 | 文件 | 说明 |
 |---|---|
-| `zh_CN.json` | 翻译字典（624 条词条，96 个上下文） |
-| `install_zh_CN.py` | Python 汉化脚本（含 12 个 LANG_PATCHES 自动汉化 + `--fix` 5 个 Bug 修复） |
+| `zh_CN.json` | 翻译字典（687 条词条，98 个上下文） |
+| `install_zh_CN.py` | Python 汉化脚本（含 9 个 LANG_PATCHES 自动汉化 + `--fix` 2 个 Bug 修复） |
 | `TRANSLATION_GUIDE.md` | 翻译词条编写规则（维护者参考） |
 
 ## 执行流程
@@ -24,9 +24,9 @@
 
 | 阶段 | 触发 | 内容 |
 |------|------|------|
-| zh_CN.json | 自动 | 624 条 qsTr 字符串替换 |
-| LANG_PATCHES | 自动 | 运行时间单位 / 天气状态 / 锁屏日期 / 桌面时钟 / 锁定状态 / 电池时间 / 电池功率常驻 汉化 |
-| BUG_FIXES | `--fix` | 启动器竞态 / 通知空按钮 修复 |
+| zh_CN.json | 自动 | 687 条 qsTr 字符串替换 |
+| LANG_PATCHES | 自动 | 运行时间单位 / 天气状态 / 锁屏日期 / 桌面时钟 / 锁定状态 / 电池时间 / 电池功率 汉化（9 条规则） |
+| BUG_FIXES | `--fix` | 启动器 Super 键竞态 / Kitty 通知空按钮 修复（2 个修复，共 5 处替换） |
 
 ## 快速开始
 
@@ -100,7 +100,7 @@ python install_zh_CN.py /path/to/source /path/to/output
 
 ### 翻译覆盖范围
 
-**96 个 QML 文件，624 条词条 + 5 个 BUG_FIXES（`--fix`）+ 12 个 LANG_PATCHES（自动）**，覆盖：
+**98 个 QML 文件，687 条词条 + 2 个 BUG_FIXES（`--fix`）+ 9 个 LANG_PATCHES（自动）**，覆盖：
 
 - 控制中心 / Nexus（网络、蓝牙、音频、外观、任务栏、通知、启动器、仪表盘、语言与地区、服务）
 - 锁屏界面
